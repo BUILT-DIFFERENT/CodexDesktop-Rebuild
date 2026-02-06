@@ -8,8 +8,12 @@ const { spawn } = require("child_process");
 
 const projectRoot = path.join(__dirname, "..", "..");
 const fixturesRoot = path.join(projectRoot, "scripts", "mcp-fixtures");
-const fixturesLogDir = path.join(projectRoot, "logs", "mcp-fixtures");
-const stateFilePath = path.join(fixturesLogDir, "state.json");
+const fixturesLogDir = process.env.MCP_FIXTURES_LOG_DIR
+  ? path.resolve(process.env.MCP_FIXTURES_LOG_DIR)
+  : path.join(projectRoot, "logs", "mcp-fixtures");
+const stateFilePath = process.env.MCP_FIXTURES_STATE_FILE
+  ? path.resolve(process.env.MCP_FIXTURES_STATE_FILE)
+  : path.join(fixturesLogDir, "state.json");
 
 function parseArgs(argv) {
   const args = new Set(argv.slice(2));
@@ -154,4 +158,3 @@ module.exports = {
   waitForHealth,
   writeState,
 };
-

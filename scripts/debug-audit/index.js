@@ -40,6 +40,33 @@ const KNOWN_METHODS = [
   "mcpServerStatus/list",
 ];
 
+const APPROVAL_REQUEST_METHODS = new Set([
+  "item/commandExecution/requestApproval",
+  "item/fileChange/requestApproval",
+]);
+
+function isApprovalResponseSignal(event, previewLower) {
+  const direction = typeof event.direction === "string" ? event.direction : "";
+  const method = typeof event.method === "string" ? event.method : "";
+  const type = typeof event.type === "string" ? event.type.toLowerCase() : "";
+
+  if (APPROVAL_REQUEST_METHODS.has(method) && direction.endsWith(".out")) {
+    return true;
+  }
+
+  if (type === "mcp-response") {
+    if (
+      previewLower.includes("execcommandapproval") ||
+      previewLower.includes("applypatchapproval") ||
+      previewLower.includes("approvalresponse")
+    ) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
 function printUsage() {
   process.stdout.write(
     [
@@ -172,7 +199,7 @@ function collectObservations(events) {
 
     if (typeof event.rawPreview === "string" && event.rawPreview.length > 0) {
       const previewLower = event.rawPreview.toLowerCase();
-      if (previewLower.includes("execcommandapproval") || previewLower.includes("applypatchapproval")) {
+      if (isApprovalResponseSignal(event, previewLower)) {
         const token = "response:approval";
         tokenSet.add(token);
         pushEvidence(evidence, token, record);
@@ -371,7 +398,7 @@ function main() {
       [
         "method:item/commandExecution/requestApproval",
         "method:item/fileChange/requestApproval",
-        "type:mcp-response",
+        "response:approval",
       ],
       observations,
     ),
@@ -418,4 +445,3 @@ try {
   process.stderr.write(`debug:audit failed: ${error.message}\n`);
   process.exit(1);
 }
-
