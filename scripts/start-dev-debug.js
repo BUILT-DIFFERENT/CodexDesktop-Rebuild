@@ -10,6 +10,7 @@ const { spawn } = require("child_process");
 const path = require("path");
 const os = require("os");
 const fs = require("fs");
+const { randomUUID } = require("crypto");
 
 const projectRoot = path.join(__dirname, "..");
 
@@ -75,7 +76,13 @@ const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
 const logDir = path.join(projectRoot, "logs");
 fs.mkdirSync(logDir, { recursive: true });
 const logFile = path.join(logDir, `dev-debug-${timestamp}.log`);
+const ndjsonLogFile = path.join(logDir, `dev-debug-${timestamp}.ndjson`);
 const logStream = fs.createWriteStream(logFile, { flags: "a" });
+
+const schemaVersion = process.env.CODEX_DEBUG_SCHEMA_VERSION || "1.0";
+const runId = process.env.CODEX_DEBUG_RUN_ID || randomUUID();
+const sessionId = process.env.CODEX_DEBUG_SESSION_ID || `debug-${timestamp}`;
+const appFlavor = process.env.CODEX_DEBUG_APP_FLAVOR || process.env.BUILD_FLAVOR || "dev";
 
 const inspectPort = process.env.CODEX_DEBUG_INSPECT_PORT || "9229";
 const rendererInspectPort = process.env.CODEX_DEBUG_RENDERER_INSPECT_PORT || "9223";
@@ -89,6 +96,9 @@ console.log(`[dev:debug] CLI Path: ${cliPath}`);
 console.log(`[dev:debug] Main inspector: ws://127.0.0.1:${inspectPort}`);
 console.log(`[dev:debug] Renderer inspector: http://127.0.0.1:${rendererInspectPort}`);
 console.log(`[dev:debug] Log file: ${logFile}`);
+console.log(`[dev:debug] NDJSON file: ${ndjsonLogFile}`);
+console.log(`[dev:debug] Run ID: ${runId}`);
+console.log(`[dev:debug] Session ID: ${sessionId}`);
 
 function writeLog(text) {
   const line = String(text);
@@ -111,6 +121,11 @@ const child = spawn(electronBin, [`--inspect=${inspectPort}`, debugEntryPath], {
     CODEX_DEBUG_OPEN_DEVTOOLS: process.env.CODEX_DEBUG_OPEN_DEVTOOLS || "1",
     CODEX_DEBUG_RENDERER_INSPECT_PORT: rendererInspectPort,
     CODEX_DEBUG_LOG_FILE: process.env.CODEX_DEBUG_LOG_FILE || logFile,
+    CODEX_DEBUG_NDJSON_LOG_FILE: process.env.CODEX_DEBUG_NDJSON_LOG_FILE || ndjsonLogFile,
+    CODEX_DEBUG_SCHEMA_VERSION: schemaVersion,
+    CODEX_DEBUG_RUN_ID: runId,
+    CODEX_DEBUG_SESSION_ID: sessionId,
+    CODEX_DEBUG_APP_FLAVOR: appFlavor,
   },
 });
 

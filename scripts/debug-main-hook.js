@@ -3,10 +3,19 @@
  * Main-process debug hook loaded from scripts/electron-debug-entry.js.
  * - Traces ipcMain handlers/listeners and webContents outbound sends
  * - Captures renderer console messages
+ * - Emits redacted NDJSON telemetry for audit tooling
  * - Auto-opens renderer DevTools (optional)
  */
 const fs = require("fs");
 const path = require("path");
+const { randomUUID } = require("crypto");
+
+let redactForLogging = (value) => value;
+try {
+  ({ redactForLogging } = require("./debug-redaction"));
+} catch {
+  // Redaction support is optional; fallback keeps debug hook functional.
+}
 
 const isElectron = Boolean(process.versions && process.versions.electron);
 const processType = process.type || "browser";
@@ -17,9 +26,14 @@ if (!isElectron || processType !== "browser") {
 
 const electron = require("electron");
 
-const logFile =
-  process.env.CODEX_DEBUG_LOG_FILE ||
-  path.join(process.cwd(), "logs", "codex-debug.log");
+const schemaVersion = process.env.CODEX_DEBUG_SCHEMA_VERSION || "1.0";
+const runId = process.env.CODEX_DEBUG_RUN_ID || randomUUID();
+const sessionId = process.env.CODEX_DEBUG_SESSION_ID || runId;
+const appFlavor = process.env.CODEX_DEBUG_APP_FLAVOR || process.env.BUILD_FLAVOR || "unknown";
+const logFile = process.env.CODEX_DEBUG_LOG_FILE || path.join(process.cwd(), "logs", "codex-debug.log");
+const ndjsonLogFile =
+  process.env.CODEX_DEBUG_NDJSON_LOG_FILE ||
+  path.join(process.cwd(), "logs", `codex-debug-${runId}.ndjson`);
 const traceEnabled = process.env.CODEX_DEBUG_TRACE !== "0";
 const traceIpc = process.env.CODEX_DEBUG_TRACE_IPC !== "0";
 const openDevTools = process.env.CODEX_DEBUG_OPEN_DEVTOOLS === "1";
@@ -36,15 +50,114 @@ try {
   // Ignore and continue if switches cannot be set this early.
 }
 
+function normalizeId(value) {
+  if (typeof value === "string" || typeof value === "number") {
+    return String(value);
+  }
+  return null;
+}
+
+function pickString(value) {
+  return typeof value === "string" && value.length > 0 ? value : null;
+}
+
+function flattenMessages(payload) {
+  const root = Array.isArray(payload) ? payload : [payload];
+  const flat = [];
+  for (const item of root) {
+    if (Array.isArray(item)) {
+      flat.push(...item);
+    } else {
+      flat.push(item);
+    }
+  }
+  return flat;
+}
+
+function maybeExtractParams(item) {
+  if (!item || typeof item !== "object") return null;
+  if (item.params && typeof item.params === "object") return item.params;
+  if (item.request && item.request.params && typeof item.request.params === "object") {
+    return item.request.params;
+  }
+  if (item.notification && item.notification.params && typeof item.notification.params === "object") {
+    return item.notification.params;
+  }
+  return null;
+}
+
+function extractSignalFields(payload) {
+  const fields = {
+    method: null,
+    type: null,
+    threadId: null,
+    turnId: null,
+    requestId: null,
+    status: null,
+  };
+
+  const messages = flattenMessages(payload);
+  for (const item of messages) {
+    if (!item || typeof item !== "object") continue;
+
+    fields.type = fields.type ?? pickString(item.type);
+    fields.method = fields.method ?? pickString(item.method);
+    fields.requestId = fields.requestId ?? normalizeId(item.id);
+
+    if (item.request && typeof item.request === "object") {
+      fields.method = fields.method ?? pickString(item.request.method);
+      fields.requestId = fields.requestId ?? normalizeId(item.request.id);
+    }
+
+    if (item.notification && typeof item.notification === "object") {
+      fields.method = fields.method ?? pickString(item.notification.method);
+    }
+
+    if (item.response && typeof item.response === "object") {
+      fields.requestId = fields.requestId ?? normalizeId(item.response.id);
+      fields.method = fields.method ?? pickString(item.response.method);
+    }
+
+    const params = maybeExtractParams(item);
+    if (params) {
+      fields.threadId =
+        fields.threadId ?? pickString(params.threadId) ?? pickString(params.conversationId);
+      fields.turnId =
+        fields.turnId ??
+        pickString(params.turnId) ??
+        (params.turn && typeof params.turn === "object" ? pickString(params.turn.id) : null);
+      fields.status =
+        fields.status ??
+        pickString(params.status) ??
+        (params.turn && typeof params.turn === "object" ? pickString(params.turn.status) : null);
+    }
+
+    fields.threadId =
+      fields.threadId ?? pickString(item.threadId) ?? pickString(item.conversationId);
+    fields.turnId =
+      fields.turnId ??
+      pickString(item.turnId) ??
+      (item.turn && typeof item.turn === "object" ? pickString(item.turn.id) : null);
+    fields.status =
+      fields.status ??
+      pickString(item.status) ??
+      (item.turn && typeof item.turn === "object" ? pickString(item.turn.status) : null);
+  }
+
+  return fields;
+}
+
 function safePreview(value) {
   try {
-    const text = JSON.stringify(value);
-    if (typeof text !== "string") return String(value);
+    const redactedValue = redactForLogging(value);
+    const text = JSON.stringify(redactedValue);
+    if (typeof text !== "string") return String(redactedValue);
     if (text.length <= maxPayloadChars) return text;
     return `${text.slice(0, maxPayloadChars)}...<truncated>`;
   } catch {
     try {
-      const text = String(value);
+      const text = redactForLogging(String(value));
+      if (typeof text !== "string") return "<unprintable>";
       if (text.length <= maxPayloadChars) return text;
       return `${text.slice(0, maxPayloadChars)}...<truncated>`;
     } catch {
@@ -61,6 +174,34 @@ function writeLog(line) {
     fs.appendFileSync(logFile, fullLine, "utf8");
   } catch {
     // Avoid crashing debug session when logging fails.
+  }
+}
+
+function emitNdjson(partialEvent) {
+  const event = {
+    schemaVersion,
+    runId,
+    sessionId,
+    pid: process.pid,
+    appFlavor,
+    ts: new Date().toISOString(),
+    direction: null,
+    channel: null,
+    method: null,
+    type: null,
+    threadId: null,
+    turnId: null,
+    requestId: null,
+    status: null,
+    rawPreview: null,
+    ...partialEvent,
+  };
+
+  try {
+    fs.mkdirSync(path.dirname(ndjsonLogFile), { recursive: true });
+    fs.appendFileSync(ndjsonLogFile, `${JSON.stringify(redactForLogging(event))}\n`, "utf8");
+  } catch {
+    // Avoid crashing debug session when NDJSON logging fails.
   }
 }
 
@@ -161,8 +302,19 @@ function formatPayloadForChannel(channel, args) {
 }
 
 log(
-  `debug hook loaded (pid=${process.pid}, logFile=${logFile}, rendererInspectPort=${rendererInspectPort})`,
+  `debug hook loaded (pid=${process.pid}, logFile=${logFile}, ndjsonLogFile=${ndjsonLogFile}, rendererInspectPort=${rendererInspectPort})`,
 );
+emitNdjson({
+  direction: "lifecycle",
+  type: "debug-hook-loaded",
+  status: "ready",
+  rawPreview: safePreview({
+    rendererInspectPort,
+    traceEnabled,
+    traceIpc,
+    openDevTools,
+  }),
+});
 
 if (traceIpc) {
   const originalHandle = electron.ipcMain.handle.bind(electron.ipcMain);
@@ -170,6 +322,13 @@ if (traceIpc) {
 
   electron.ipcMain.handle = (channel, listener) => {
     const wrapped = async (event, ...args) => {
+      const inbound = extractSignalFields(args);
+      emitNdjson({
+        direction: "ipcMain.handle.in",
+        channel,
+        ...inbound,
+        rawPreview: safePreview(args),
+      });
       if (traceEnabled) {
         log(
           `ipcMain.handle <= ${channel} sender=${event.sender.id} payload=${formatPayloadForChannel(
@@ -180,11 +339,30 @@ if (traceIpc) {
       }
       try {
         const result = await listener(event, ...args);
+        const outbound = extractSignalFields([result]);
+        emitNdjson({
+          direction: "ipcMain.handle.out",
+          channel,
+          method: outbound.method ?? inbound.method,
+          type: outbound.type ?? inbound.type,
+          threadId: outbound.threadId ?? inbound.threadId,
+          turnId: outbound.turnId ?? inbound.turnId,
+          requestId: outbound.requestId ?? inbound.requestId,
+          status: outbound.status ?? "ok",
+          rawPreview: safePreview(result),
+        });
         if (traceEnabled) {
           log(`ipcMain.handle => ${channel} result=${safePreview(result)}`);
         }
         return result;
       } catch (error) {
+        emitNdjson({
+          direction: "ipcMain.handle.error",
+          channel,
+          ...inbound,
+          status: "error",
+          rawPreview: safePreview(error?.stack || error),
+        });
         log(`ipcMain.handle !! ${channel} error=${safePreview(error?.stack || error)}`);
         throw error;
       }
@@ -194,8 +372,15 @@ if (traceIpc) {
 
   electron.ipcMain.on = (channel, listener) => {
     const wrapped = (event, ...args) => {
+      const inbound = extractSignalFields(args);
+      emitNdjson({
+        direction: "ipcMain.on.in",
+        channel,
+        ...inbound,
+        rawPreview: safePreview(args),
+      });
       if (traceEnabled) {
-          log(
+        log(
           `ipcMain.on <= ${channel} sender=${event.sender.id} payload=${formatPayloadForChannel(
             channel,
             args,
@@ -203,8 +388,23 @@ if (traceIpc) {
         );
       }
       try {
-        return listener(event, ...args);
+        const result = listener(event, ...args);
+        emitNdjson({
+          direction: "ipcMain.on.out",
+          channel,
+          ...inbound,
+          status: "ok",
+          rawPreview: safePreview(result),
+        });
+        return result;
       } catch (error) {
+        emitNdjson({
+          direction: "ipcMain.on.error",
+          channel,
+          ...inbound,
+          status: "error",
+          rawPreview: safePreview(error?.stack || error),
+        });
         log(`ipcMain.on !! ${channel} error=${safePreview(error?.stack || error)}`);
         throw error;
       }
@@ -217,6 +417,14 @@ electron.app.on("web-contents-created", (_event, contents) => {
   if (traceIpc) {
     const originalSend = contents.send.bind(contents);
     contents.send = (channel, ...args) => {
+      const outbound = extractSignalFields(args);
+      emitNdjson({
+        direction: "webContents.send.out",
+        channel,
+        ...outbound,
+        status: "sent",
+        rawPreview: safePreview(args),
+      });
       if (traceEnabled) {
         log(
           `webContents.send => ${channel} target=${contents.id} payload=${formatPayloadForChannel(
@@ -230,6 +438,19 @@ electron.app.on("web-contents-created", (_event, contents) => {
   }
 
   contents.on("console-message", (_e, level, message, line, sourceId) => {
+    const renderedMessage = {
+      level,
+      wc: contents.id,
+      sourceId,
+      line,
+      message,
+    };
+    emitNdjson({
+      direction: "renderer.console",
+      type: "renderer.console",
+      status: String(level),
+      rawPreview: safePreview(renderedMessage),
+    });
     log(
       `renderer.console level=${level} wc=${contents.id} source=${safePreview(
         sourceId,
@@ -239,14 +460,32 @@ electron.app.on("web-contents-created", (_event, contents) => {
 });
 
 electron.app.on("browser-window-created", (_event, window) => {
+  emitNdjson({
+    direction: "lifecycle",
+    type: "browser-window-created",
+    status: "ok",
+    rawPreview: safePreview({ windowId: window.id }),
+  });
   log(`browser-window-created id=${window.id}`);
   if (openDevTools) {
     setTimeout(() => {
       if (!window.isDestroyed()) {
         try {
           window.webContents.openDevTools({ mode: "detach", activate: true });
+          emitNdjson({
+            direction: "lifecycle",
+            type: "devtools-opened",
+            status: "ok",
+            rawPreview: safePreview({ windowId: window.id }),
+          });
           log(`devtools opened for window id=${window.id}`);
         } catch (error) {
+          emitNdjson({
+            direction: "lifecycle",
+            type: "devtools-opened",
+            status: "error",
+            rawPreview: safePreview(error),
+          });
           log(`failed to open devtools for window id=${window.id}: ${safePreview(error)}`);
         }
       }
@@ -255,9 +494,22 @@ electron.app.on("browser-window-created", (_event, window) => {
 });
 
 process.on("uncaughtException", (error) => {
+  emitNdjson({
+    direction: "process",
+    type: "uncaughtException",
+    status: "error",
+    rawPreview: safePreview(error?.stack || error),
+  });
   log(`uncaughtException ${safePreview(error?.stack || error)}`);
 });
 
 process.on("unhandledRejection", (error) => {
+  emitNdjson({
+    direction: "process",
+    type: "unhandledRejection",
+    status: "error",
+    rawPreview: safePreview(error?.stack || error),
+  });
   log(`unhandledRejection ${safePreview(error?.stack || error)}`);
 });
+
