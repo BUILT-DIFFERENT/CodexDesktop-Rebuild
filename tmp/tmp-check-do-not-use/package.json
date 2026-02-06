@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@wakaru/unminify": "^0.2.2",
+    "fast-glob": "^3.3.3",
+    "fs-extra": "^11.3.3"
+  }
+}
