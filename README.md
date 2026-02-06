@@ -36,6 +36,30 @@ npm run build:all
 npm run dev
 ```
 
+## Debug Mode
+
+```bash
+pnpm run dev:debug
+```
+
+What this enables:
+- Main process Node inspector (`ws://127.0.0.1:<port>`)
+- Auto-open renderer DevTools
+- IPC/app-server tracing + renderer console capture to `logs/dev-debug-*.log`
+- Main process stdout/stderr mirrored to the same log file
+
+Useful env vars:
+- `CODEX_DEBUG_INSPECT_PORT` (default `9229`)
+- `CODEX_DEBUG_RENDERER_INSPECT_PORT` (default `9223`)
+- `CODEX_DEBUG_TRACE=0` to disable verbose tracing
+- `CODEX_DEBUG_TRACE_IPC=0` to disable IPC tracing only
+- `CODEX_DEBUG_OPEN_DEVTOOLS=0` to keep DevTools closed
+
+Attach points:
+- Main process debugger: `ws://127.0.0.1:<CODEX_DEBUG_INSPECT_PORT>`
+- Renderer debugger: `http://127.0.0.1:<CODEX_DEBUG_RENDERER_INSPECT_PORT>` (Chrome DevTools Protocol)
+- Renderer performance profile: open renderer DevTools (`Performance` tab) and record while reproducing.
+
 ## Project Structure
 
 ```
