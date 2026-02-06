@@ -93,6 +93,9 @@ This repository includes a non-invasive v1 debug harness focused on:
 # 1) Start local fixtures
 pnpm run debug:fixtures:start
 
+# Optional machine-readable fixture status
+pnpm run debug:fixtures:start -- --json
+
 # 2) Start app in debug mode (generates .log + .ndjson)
 pnpm run dev:debug
 
@@ -107,6 +110,12 @@ pnpm run debug:audit -- --log logs --json
 
 # 6) Stop fixtures
 pnpm run debug:fixtures:stop
+
+# Optional machine-readable stop status
+pnpm run debug:fixtures:stop -- --json
+
+# 7) Run the v1 contract verification suite
+pnpm run debug:verify
 ```
 
 ### NDJSON Log Contract (v1)
@@ -120,7 +129,7 @@ Logs are redacted before write (Authorization/Bearer/cookies/API keys).
 ### V2 Scope (Deferred)
 
 - OAuth MCP fixture and OAuth-specific audit checks are intentionally deferred to v2.
-- See parity mapping in `docs/signal-parity-map.md`.
+- See parity mapping in `signal-parity-map.md`.
 
 ## Project Structure
 

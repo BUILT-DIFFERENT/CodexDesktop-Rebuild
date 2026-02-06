@@ -12,6 +12,7 @@
     "debug:fixtures:start": "node scripts/mcp-fixtures/start.js",
     "debug:fixtures:stop": "node scripts/mcp-fixtures/stop.js",
     "debug:audit": "node scripts/debug-audit/index.js",
+    "debug:verify": "node scripts/debug-harness-verify.js",
 
     "patch": "node scripts/patch-node-pty-spectre.js && node scripts/patch-copyright.js && node scripts/patch-i18n.js && node scripts/patch-process-polyfill.js",
 
