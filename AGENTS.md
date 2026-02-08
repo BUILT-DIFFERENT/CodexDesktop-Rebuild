@@ -1,157 +1,110 @@
-# Codex Desktop Official App Verification Workflow (Playwright)
+# Codex Desktop Rewrite Agent Index
 
-This document records the exact end-to-end workflow used to verify Codex Desktop UI control and functionality using Playwright.
+This repository is executing a parity-hard Electron -> Rust/Tauri rewrite.
+Agents must preserve behavior, UI, and animation parity while migrating host/runtime and renderer internals.
 
-## Goal
+## Hard Completion Gate (Non-Negotiable)
 
-Prove we can:
+A rewrite milestone is only complete when all of the following are true:
 
-1. Launch the Codex Desktop app in debug mode.
-2. Attach Playwright to the renderer.
-3. Control UI elements (click/type/submit).
-4. Capture UI screenshots as artifacts.
-5. Validate the typed/submitted content is present in the app DOM.
+1. 100% query/mutation host method coverage against `crates/host-api/src/lib.rs`.
+2. 100% git worker method coverage against `docs/parity/worker-git-methods.json`.
+3. No unresolved high-severity UI/animation parity diffs in golden flows.
+4. No failing parity audit checks.
+5. Electron vs Tauri transcript diffs contain only approved, documented low-risk deltas.
 
-## Environment
+## Project Structure Map
 
-- OS: Windows
-- Repo root: `C:\Users\gamer\Documents\Theoden\third_party\CodexDesktop-Rebuild`
-- Shell: PowerShell
-- Node: `v22.20.0`
-- pnpm: `10.28.2`
+- `src/.vite/build/`: Electron host bundles (baseline source of truth).
+- `src/webview/`: Electron renderer bundles/assets (baseline source of truth).
+- `apps/desktop-tauri/src-tauri/`: Tauri app shell and Rust host wiring.
+- `apps/desktop-tauri/web-rewrite/`: incremental renderer rewrite target.
+- `apps/desktop-tauri/bridge/`: compatibility shim (`window.electronBridge` surface).
+- `crates/host-api/`: shared host request/response contracts and method registries.
+- `crates/app-server-bridge/`: JSON-RPC bridge to Codex app-server process.
+- `crates/git-worker/`: git worker parity implementation.
+- `crates/terminal/`: PTY terminal lifecycle and attach/write/resize/close behavior.
+- `crates/state/`: persisted host state adapters.
+- `scripts/parity/`: extraction, analysis, and parity validation scripts.
+- `docs/parity/`: generated parity artifacts and runtime/flow baselines.
+- `docs/rewrite/`: sectioned implementation docs for deep-dive execution.
+- `personal/codex/`: personal Codex workspace for iterative notes and reusable task helpers.
 
-## Prerequisites
+## Required Stack Usage Rules
 
-1. Ensure `npx` is available:
+Agents must use the following tools/patterns in rewrite code and tests:
 
-```powershell
-Get-Command npx
-```
+- `zod`: validate runtime data boundaries in TypeScript/frontend integrations.
+- `swr`: client-side query caching/revalidation for rewritten frontend data fetching.
+- `biome`: formatter+linter with prettier-like conventions (`biome.json` is authoritative).
+- `playwright`: renderer/UI automation and parity assertions.
+- `@crabnebula/tauri-driver`: desktop driver checks for live Tauri behavior.
 
-2. Ensure Playwright skill wrapper exists:
+## Rewrite Execution Order
 
-```powershell
-Get-ChildItem C:\Users\gamer\.codex\skills\playwright\scripts
-```
+1. Harden parity sources and extraction artifacts.
+2. Complete Rust/Tauri host method + event parity.
+3. Complete worker and terminal parity.
+4. Keep renderer in mirror mode until runtime parity gates are clean.
+5. Replace renderer internals route-by-route under visual/motion gates.
+6. Cut over only when hard completion gate passes.
 
-3. Install dependencies so `codex.exe` is available from `@cometix/codex`:
+## Continuous Workflow Improvement (Required)
 
-```powershell
-pnpm install
-```
+Agents must continually improve their own execution quality by using `personal/codex/` while working:
 
-4. Confirm CLI binary exists after install:
+1. Before implementation, check `personal/codex/notes/` for relevant prior learnings.
+2. During implementation, append concise notes for decisions, pitfalls, and validated commands.
+3. When a pattern repeats, add or update a reusable helper under `personal/codex/helpers/`.
+4. After completion, refine notes/helpers to a stable version so the next task is faster.
 
-```powershell
-Test-Path .\node_modules\@cometix\codex\vendor\x86_64-pc-windows-msvc\codex\codex.exe
-```
+This folder is for agent process acceleration only (notes, snippets, helper scripts, checklists). It must not change external product contracts or bypass parity gates.
 
-Expected: `True`
+## Canonical Parity Sources
 
-## Step 1: Launch official app in debug mode
+Primary parity artifacts and manifests:
 
-Start the app (keep this terminal running):
+- `docs/parity/source-manifest.json`
+- `docs/parity/opaque-bundles.json`
+- `docs/parity/routes.json`
+- `docs/parity/rpc-queries.json`
+- `docs/parity/rpc-mutations.json`
+- `docs/parity/worker-git-methods.json`
+- `docs/parity/ipc-channels.json`
+- `docs/parity/runtime-schemas.json`
+- `docs/parity/animations.json`
 
-```powershell
-pnpm run dev:debug
-```
+Canonical signal map:
 
-Expected key output:
+- `signal-parity-map.md` (authoritative)
+- `docs/unfinished-signal-parity-map.md` (pointer/reference only)
 
-- `Main inspector: ws://127.0.0.1:9229`
-- `Renderer inspector: http://127.0.0.1:9223`
-- `CLI Path: ...\node_modules\@cometix\codex\vendor\x86_64-pc-windows-msvc\codex\codex.exe`
+## Validation Commands
 
-This confirms the app is running and exposes a renderer CDP endpoint for Playwright attachment.
+- `pnpm run parity:extract`
+- `pnpm run parity:runtime -- --log logs`
+- `pnpm run parity:check:sources`
+- `pnpm run parity:check:host`
+- `pnpm run parity:check:worker`
+- `pnpm run parity:check:ui-motion`
+- `pnpm run parity:check`
+- `pnpm run test:ui`
+- `pnpm run test:tauri-driver`
+- `pnpm run tauri:check`
 
-## Step 2: Attach Playwright and enumerate renderer targets
+## Deep Rewrite Docs
 
-In a second terminal:
+- `docs/rewrite/01-baseline-and-sources.md`
+- `docs/rewrite/02-runtime-host-parity.md`
+- `docs/rewrite/03-renderer-ui-animation-parity.md`
+- `docs/rewrite/04-validation-and-definition-of-done.md`
+- `docs/rewrite/05-cutover-and-risk-controls.md`
 
-```powershell
-pnpm run debug:ui -- list
-```
+## Compatibility Contract
 
-Observed output included:
+The external renderer contract must stay stable during parity work:
 
-- `0: devtools://...`
-- `1: app://-/index.html`
+- `window.electronBridge` shape and semantics.
+- `window.codexWindowType`.
 
-This confirms Playwright attached to the running Electron renderer and detected the app UI.
-
-## Step 3: Capture baseline UI screenshot
-
-```powershell
-pnpm run debug:ui -- screenshot logs/screenshots/renderer-main.png --full-page
-```
-
-Expected output:
-
-- `screenshot: logs/screenshots/renderer-main.png`
-
-## Step 4: Control the app UI (click + type + submit)
-
-1. Start a new thread:
-
-```powershell
-pnpm run debug:ui -- click "button:has-text('New thread')"
-```
-
-2. Type into the composer editor:
-
-```powershell
-pnpm run debug:ui -- type ".ProseMirror" "Playwright skill verification: controlling Codex Desktop renderer from CLI."
-```
-
-3. Capture state after typing:
-
-```powershell
-pnpm run debug:ui -- screenshot logs/screenshots/renderer-typed.png --full-page
-```
-
-4. Submit with Enter:
-
-```powershell
-pnpm run debug:ui -- press Enter
-```
-
-5. Capture state after submit:
-
-```powershell
-pnpm run debug:ui -- screenshot logs/screenshots/renderer-after-enter.png --full-page
-```
-
-## Step 5: Functional assertion (DOM content check)
-
-Run:
-
-```powershell
-pnpm run debug:ui -- eval "(() => { const body = document.body?.innerText || ''; return { containsMessage: body.includes('Playwright skill verification: controlling Codex Desktop renderer from CLI.'), containsPrefix: body.includes('Playwright skill verification') }; })()"
-```
-
-Observed result:
-
-```json
-{
-  "containsMessage": true,
-  "containsPrefix": true
-}
-```
-
-This confirms the automation-controlled message was present in the app after submit.
-
-## Artifacts Captured
-
-- `logs/screenshots/renderer-main.png`
-- `logs/screenshots/renderer-typed.png`
-- `logs/screenshots/renderer-after-enter.png`
-
-## Cleanup
-
-Stop the debug app session by terminating the `pnpm run dev:debug` terminal (Ctrl+C). If background Electron/Node processes remain, terminate them from PowerShell.
-
-## Notes
-
-- The primary app automation path in this repo is `pnpm run debug:ui -- ...`, implemented by `scripts/debug-renderer-playwright.js`.
-- This script connects Playwright to `http://127.0.0.1:9223` (renderer CDP) exposed by `pnpm run dev:debug`.
-- A warning about unknown npm config keys may appear during `npx` execution; it does not block the workflow.
+Internal implementation can change as long as this contract and parity gates remain intact.

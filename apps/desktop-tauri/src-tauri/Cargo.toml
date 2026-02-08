@@ -1,0 +1,24 @@
+[package]
+name = "desktop-tauri"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+
+[build-dependencies]
+tauri-build = { version = "2.5.1" }
+
+[dependencies]
+anyhow.workspace = true
+app-server-bridge = { path = "../../../crates/app-server-bridge" }
+git-worker = { path = "../../../crates/git-worker" }
+host-api = { path = "../../../crates/host-api" }
+serde.workspace = true
+serde_json.workspace = true
+state = { path = "../../../crates/state" }
+tauri = { version = "2.10.2" }
+tauri-plugin-shell = "2.3.3"
+terminal = { path = "../../../crates/terminal" }
+tokio.workspace = true
+tracing.workspace = true
+uuid.workspace = true
+dirs = "6.0.0"

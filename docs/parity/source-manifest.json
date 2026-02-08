@@ -1,0 +1,178 @@
+{
+  "extractedAt": "2026-02-08T02:29:51.255Z",
+  "coverage": {
+    "total": 6,
+    "available": 6,
+    "missing": 0,
+    "opaque": 4,
+    "byClass": {
+      "original": 0,
+      "unminify-safe": 2
+    }
+  },
+  "requiredSources": [
+    {
+      "id": "renderer.bundle",
+      "preferredClass": "original",
+      "sourceClass": "opaque",
+      "selectedSourceClass": "original",
+      "selectedPath": "src\\webview\\assets\\index-CgwAo6pj.js",
+      "extractionStatus": "opaque",
+      "candidates": [
+        {
+          "path": "src\\webview\\assets\\index-CgwAo6pj.js",
+          "sourceClass": "original",
+          "exists": true
+        },
+        {
+          "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\index-CgwAo6pj.js",
+          "sourceClass": "unminify-safe",
+          "exists": false
+        }
+      ],
+      "stats": {
+        "byteSize": 6426203,
+        "lineCount": 2897,
+        "maxLineLength": 664312,
+        "averageLineLength": 2216.88
+      }
+    },
+    {
+      "id": "renderer.css",
+      "preferredClass": "original",
+      "sourceClass": "opaque",
+      "selectedSourceClass": "original",
+      "selectedPath": "src\\webview\\assets\\index-DYqVWCHk.css",
+      "extractionStatus": "opaque",
+      "candidates": [
+        {
+          "path": "src\\webview\\assets\\index-DYqVWCHk.css",
+          "sourceClass": "original",
+          "exists": true
+        },
+        {
+          "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\index-DYqVWCHk.css",
+          "sourceClass": "unminify-safe",
+          "exists": false
+        }
+      ],
+      "stats": {
+        "byteSize": 303367,
+        "lineCount": 33,
+        "maxLineLength": 291275,
+        "averageLineLength": 9192.94
+      }
+    },
+    {
+      "id": "renderer.pdfWorker",
+      "preferredClass": "original",
+      "sourceClass": "opaque",
+      "selectedSourceClass": "original",
+      "selectedPath": "src\\webview\\assets\\pdf.worker.min-qwK7q_zL.mjs",
+      "extractionStatus": "opaque",
+      "candidates": [
+        {
+          "path": "src\\webview\\assets\\pdf.worker.min-qwK7q_zL.mjs",
+          "sourceClass": "original",
+          "exists": true
+        },
+        {
+          "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\pdf.worker.min-qwK7q_zL.mjs",
+          "sourceClass": "unminify-safe",
+          "exists": false
+        }
+      ],
+      "stats": {
+        "byteSize": 1046214,
+        "lineCount": 28,
+        "maxLineLength": 960479,
+        "averageLineLength": 37363.68
+      }
+    },
+    {
+      "id": "host.main",
+      "preferredClass": "unminify-safe",
+      "sourceClass": "opaque",
+      "selectedSourceClass": "unminify-safe",
+      "selectedPath": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\.vite\\build\\main-CQwPb0Th.js",
+      "extractionStatus": "opaque",
+      "candidates": [
+        {
+          "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\.vite\\build\\main-CQwPb0Th.js",
+          "sourceClass": "unminify-safe",
+          "exists": true
+        },
+        {
+          "path": "src\\.vite\\build\\main-CQwPb0Th.js",
+          "sourceClass": "original",
+          "exists": true
+        }
+      ],
+      "stats": {
+        "byteSize": 1786185,
+        "lineCount": 43540,
+        "maxLineLength": 151814,
+        "averageLineLength": 40.65
+      }
+    },
+    {
+      "id": "host.worker",
+      "preferredClass": "unminify-safe",
+      "sourceClass": "unminify-safe",
+      "selectedSourceClass": "unminify-safe",
+      "selectedPath": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\.vite\\build\\worker.js",
+      "extractionStatus": "ok",
+      "candidates": [
+        {
+          "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\.vite\\build\\worker.js",
+          "sourceClass": "unminify-safe",
+          "exists": true
+        },
+        {
+          "path": "src\\.vite\\build\\worker.js",
+          "sourceClass": "original",
+          "exists": true
+        }
+      ],
+      "stats": {
+        "byteSize": 1074106,
+        "lineCount": 32235,
+        "maxLineLength": 4790,
+        "averageLineLength": 33.32
+      }
+    },
+    {
+      "id": "host.preload",
+      "preferredClass": "unminify-safe",
+      "sourceClass": "unminify-safe",
+      "selectedSourceClass": "unminify-safe",
+      "selectedPath": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\.vite\\build\\preload.js",
+      "extractionStatus": "ok",
+      "candidates": [
+        {
+          "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\.vite\\build\\preload.js",
+          "sourceClass": "unminify-safe",
+          "exists": true
+        },
+        {
+          "path": "src\\.vite\\build\\preload.js",
+          "sourceClass": "original",
+          "exists": true
+        }
+      ],
+      "stats": {
+        "byteSize": 1778,
+        "lineCount": 55,
+        "maxLineLength": 266,
+        "averageLineLength": 32.33
+      }
+    }
+  ],
+  "blindSpots": {
+    "unminifySafeMissingRendererSources": [
+      "renderer.bundle",
+      "renderer.css",
+      "renderer.pdfWorker"
+    ]
+  }
+}

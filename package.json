@@ -13,33 +13,42 @@
     "debug:fixtures:stop": "node scripts/mcp-fixtures/stop.js",
     "debug:audit": "node scripts/debug-audit/index.js",
     "debug:verify": "node scripts/debug-harness-verify.js",
-
+    "lint": "biome check biome.json playwright.config.cjs scripts/testing tests/ui apps/desktop-tauri/web-rewrite",
+    "lint:fix": "biome check --write biome.json playwright.config.cjs scripts/testing tests/ui apps/desktop-tauri/web-rewrite",
+    "format": "biome format --write biome.json playwright.config.cjs scripts/testing tests/ui apps/desktop-tauri/web-rewrite",
+    "test:ui": "playwright test",
+    "test:tauri-driver": "node scripts/testing/tauri-driver-smoke.js",
+    "web-rewrite:dev": "pnpm --dir apps/desktop-tauri/web-rewrite dev",
+    "web-rewrite:check": "pnpm --dir apps/desktop-tauri/web-rewrite check",
+    "parity:extract": "node scripts/parity/extract-static-parity.js",
+    "parity:runtime": "node scripts/parity/analyze-runtime-log.js --log logs",
+    "parity:check:host": "node scripts/parity/check-host-coverage.js",
+    "parity:check:worker": "node scripts/parity/check-worker-coverage.js",
+    "parity:check:ui-motion": "node scripts/parity/check-ui-motion-parity.js",
+    "parity:check:sources": "node scripts/parity/check-source-manifest.js",
+    "parity:check": "pnpm run parity:check:sources && pnpm run parity:check:host && pnpm run parity:check:worker && pnpm run parity:check:ui-motion",
+    "tauri:dev": "cargo run -p desktop-tauri",
+    "tauri:check": "cargo check --workspace",
     "patch": "node scripts/patch-node-pty-spectre.js && node scripts/patch-copyright.js && node scripts/patch-i18n.js && node scripts/patch-process-polyfill.js",
-
     "forge:package": "electron-forge package",
     "forge:make": "pnpm run patch && electron-forge make",
-
     "build": "pnpm run build:current",
     "build:current": "pnpm run forge:make",
-
     "build:mac": "pnpm run patch && pnpm run build:mac-arm64 && pnpm run build:mac-x64",
     "build:mac-arm64": "pnpm run patch && electron-forge make --platform=darwin --arch=arm64",
     "build:mac-x64": "pnpm run patch && electron-forge make --platform=darwin --arch=x64",
-
     "build:win": "pnpm run build:win-x64",
     "build:win-x64": "pnpm run patch && electron-forge make --platform=win32 --arch=x64",
-
     "build:linux": "pnpm run patch && pnpm run build:linux-x64 && pnpm run build:linux-arm64",
     "build:linux-x64": "pnpm run patch && electron-forge make --platform=linux --arch=x64",
     "build:linux-arm64": "pnpm run patch && electron-forge make --platform=linux --arch=arm64",
-
     "build:all": "pnpm run build:mac && pnpm run build:win && pnpm run build:linux",
-
     "postinstall": "pnpm run rebuild:native",
     "rebuild:native": "node scripts/rebuild-native.js"
   },
   "devDependencies": {
-    "acorn": "^8.15.0",
+    "@biomejs/biome": "^2.3.14",
+    "@crabnebula/tauri-driver": "^2.0.8",
     "@electron-forge/cli": "^7.10.2",
     "@electron-forge/maker-deb": "^7.10.2",
     "@electron-forge/maker-dmg": "^7.10.2",
@@ -50,6 +59,8 @@
     "@electron-forge/plugin-fuses": "^7.10.2",
     "@electron/fuses": "^1.8.0",
     "@electron/rebuild": "^3.7.1",
+    "@playwright/test": "^1.58.2",
+    "acorn": "^8.15.0",
     "electron": "40.0.0"
   },
   "dependencies": {
@@ -66,6 +77,7 @@
     "shell-env": "^4.0.1",
     "shlex": "^3.0.0",
     "smol-toml": "^1.5.2",
+    "swr": "^2.4.0",
     "zod": "^4.1.13"
   },
   "optionalDependencies": {

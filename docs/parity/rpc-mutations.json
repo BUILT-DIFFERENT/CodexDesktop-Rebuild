@@ -1,0 +1,31 @@
+{
+  "extractedAt": "2026-02-08T02:29:51.253Z",
+  "source": "src\\webview\\assets\\index-CgwAo6pj.js",
+  "methods": [
+    "add-workspace-root-option",
+    "apply-patch",
+    "automation-create",
+    "automation-delete",
+    "automation-run-delete",
+    "automation-run-now",
+    "automation-update",
+    "generate-pull-request-message",
+    "generate-thread-title",
+    "gh-pr-create",
+    "git-checkout-branch",
+    "git-create-branch",
+    "git-push",
+    "install-recommended-skill",
+    "local-environment-config-save",
+    "open-file",
+    "remove-skill",
+    "set-configuration",
+    "set-global-state",
+    "set-preferred-app",
+    "terminal-attach",
+    "terminal-close",
+    "terminal-create",
+    "terminal-resize",
+    "terminal-write"
+  ]
+}

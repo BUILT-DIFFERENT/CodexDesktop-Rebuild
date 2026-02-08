@@ -1,0 +1,19 @@
+{
+  "extractedAt": "2026-02-08T02:29:51.253Z",
+  "sources": [
+    "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\.vite\\build\\preload.js",
+    "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\.vite\\build\\main-CQwPb0Th.js"
+  ],
+  "channels": [
+    "codex_desktop:check-for-updates",
+    "codex_desktop:get-build-flavor",
+    "codex_desktop:get-sentry-init-options",
+    "codex_desktop:message-for-view",
+    "codex_desktop:message-from-view",
+    "codex_desktop:show-context-menu",
+    "codex_desktop:trigger-sentry-test",
+    "codex_desktop:worker:",
+    "codex_desktop:worker:${id}:for-view",
+    "codex_desktop:worker:${id}:from-view"
+  ]
+}

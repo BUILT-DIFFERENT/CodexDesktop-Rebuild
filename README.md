@@ -36,6 +36,45 @@ npm run build:all
 npm run dev
 ```
 
+## Tauri Rewrite (Rust)
+
+The in-progress Rust + Tauri rewrite lives in:
+
+- `apps/desktop-tauri/`
+- `crates/`
+
+Useful commands:
+
+```bash
+pnpm run tauri:check
+pnpm run tauri:dev
+pnpm run parity:extract
+pnpm run parity:runtime -- --log logs
+pnpm run parity:check
+pnpm run lint
+pnpm run test:ui -- --list
+pnpm run test:tauri-driver
+```
+
+## Rewrite Stack Tooling
+
+The rewrite baseline now includes:
+
+- Validation/data contracts: `zod`
+- Frontend async cache baseline: `SWR` (in `apps/desktop-tauri/web-rewrite`)
+- Formatting/linting: `Biome` (prettier-like formatter profile)
+- UI automation: `Playwright`
+- Desktop webdriver bridge: `@crabnebula/tauri-driver`
+
+Note: `test:tauri-driver` performs a platform preflight. On Windows it reports a skipped status unless `msedgedriver` is available in `PATH`.
+
+Parity validation scripts:
+
+- `parity:check:sources` -> validates required parity source manifest coverage
+- `parity:check:host` -> validates host query/mutation dispatch coverage
+- `parity:check:worker` -> validates git worker method coverage
+- `parity:check:ui-motion` -> validates keyframe/css-variable parity against extracted baseline
+
 ## Debug Mode
 
 ```bash

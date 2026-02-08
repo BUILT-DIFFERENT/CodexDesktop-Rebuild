@@ -1,0 +1,19 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Default permissions for Codex Tauri rewrite.",
+  "windows": [
+    "main",
+    "hud",
+    "secondary",
+    "overlay"
+  ],
+  "permissions": [
+    "core:default",
+    "shell:default",
+    "shell:allow-execute",
+    "shell:allow-spawn",
+    "shell:allow-kill",
+    "shell:allow-stdin-write"
+  ]
+}

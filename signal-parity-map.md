@@ -1,5 +1,7 @@
 # Signal Parity Map (V1)
 
+This is the canonical signal parity map for the rewrite.
+
 This map links each audited signal to:
 - the official app event/method observed in this Electron rebuild,
 - the native/Tauri equivalent (if known),
