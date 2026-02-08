@@ -1,0 +1,94 @@
+{
+  "requiredArtifacts": [
+    "docs/parity/feature-contract.md",
+    "docs/parity/source-manifest.json",
+    "docs/parity/opaque-bundles.json",
+    "docs/parity/pdf-worker.json",
+    "docs/parity/rpc-queries.json",
+    "docs/parity/rpc-mutations.json",
+    "docs/parity/ipc-channels.json",
+    "docs/parity/runtime-schemas.json",
+    "docs/parity/worker-git-methods.json",
+    "docs/parity/routes.json",
+    "docs/parity/animations.json",
+    "docs/parity/critical-flows/login.md",
+    "docs/parity/critical-flows/thread-turn.md",
+    "docs/parity/critical-flows/automations.md",
+    "docs/parity/critical-flows/git.md",
+    "docs/parity/approved-deltas.md",
+    "signal-parity-map.md"
+  ],
+  "coverageDocs": [
+    "docs/rewrite/runtime-topology.md",
+    "docs/rewrite/event-routing.md",
+    "docs/rewrite/streaming-contract.md",
+    "docs/rewrite/contract-sync.md",
+    "docs/rewrite/state-parity.md",
+    "docs/rewrite/window-lifecycle.md",
+    "docs/rewrite/02-runtime-host-parity.md",
+    "docs/rewrite/03-renderer-ui-animation-parity.md",
+    "docs/rewrite/04-validation-and-definition-of-done.md"
+  ],
+  "documents": {
+    "docs/rewrite/runtime-topology.md": {
+      "requiredSections": ["Runtime Graph", "Message Flow", "Ownership and Lifecycle", "Parity Artifacts", "Enforcement", "Test Plan"],
+      "requiredRefs": [
+        "docs/parity/feature-contract.md",
+        "docs/parity/source-manifest.json",
+        "docs/parity/opaque-bundles.json",
+        "docs/parity/pdf-worker.json",
+        "docs/parity/rpc-queries.json",
+        "docs/parity/rpc-mutations.json",
+        "docs/parity/ipc-channels.json",
+        "docs/parity/runtime-schemas.json"
+      ]
+    },
+    "docs/rewrite/event-routing.md": {
+      "requiredSections": ["Scope Model", "Routing Rules", "Subscription Lifecycle", "Error Semantics", "Parity Artifacts", "Enforcement", "Test Plan"],
+      "requiredRefs": [
+        "docs/parity/ipc-channels.json",
+        "docs/parity/runtime-schemas.json",
+        "signal-parity-map.md",
+        "docs/parity/critical-flows/login.md",
+        "docs/parity/critical-flows/thread-turn.md",
+        "docs/parity/critical-flows/automations.md",
+        "docs/parity/critical-flows/git.md"
+      ]
+    },
+    "docs/rewrite/streaming-contract.md": {
+      "requiredSections": ["Sequence Semantics", "Buffer and Backpressure", "Reconnect and Resync", "Parity Artifacts", "Enforcement", "Test Plan"],
+      "requiredRefs": [
+        "docs/parity/ipc-channels.json",
+        "docs/parity/runtime-schemas.json",
+        "docs/parity/critical-flows/thread-turn.md",
+        "docs/parity/critical-flows/git.md",
+        "docs/parity/critical-flows/automations.md"
+      ]
+    },
+    "docs/rewrite/contract-sync.md": {
+      "requiredSections": ["Source of Truth", "Drift Prevention", "Required Outputs", "Parity Artifacts", "Enforcement", "Test Plan"],
+      "requiredRefs": [
+        "docs/parity/runtime-schemas.json",
+        "docs/parity/rpc-queries.json",
+        "docs/parity/rpc-mutations.json"
+      ]
+    },
+    "docs/rewrite/state-parity.md": {
+      "requiredSections": ["Storage Rules", "Concurrency", "Reset and Repair", "Parity Artifacts", "Enforcement", "Test Plan"],
+      "requiredRefs": [
+        "docs/parity/runtime-schemas.json",
+        "docs/parity/critical-flows/login.md",
+        "docs/parity/critical-flows/thread-turn.md"
+      ]
+    },
+    "docs/rewrite/window-lifecycle.md": {
+      "requiredSections": ["Window Types", "Focus and Visibility", "Bounds and Displays", "Close and Crash", "Parity Artifacts", "Enforcement", "Test Plan"],
+      "requiredRefs": [
+        "docs/parity/feature-contract.md",
+        "docs/parity/ipc-channels.json",
+        "docs/parity/routes.json",
+        "docs/parity/critical-flows/login.md"
+      ]
+    }
+  }
+}

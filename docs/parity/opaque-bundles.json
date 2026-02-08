@@ -1,5 +1,5 @@
 {
-  "extractedAt": "2026-02-08T02:29:51.256Z",
+  "extractedAt": "2026-02-08T07:23:28.248Z",
   "heuristics": {
     "byteSizeMin": 100000,
     "maxLineLengthOpaque": 50000,
@@ -9,7 +9,7 @@
   "totalEntries": 135,
   "opaqueEntries": [
     {
-      "path": "src\\webview\\assets\\pdf.worker.min-qwK7q_zL.mjs",
+      "path": "src/webview/assets/pdf.worker.min-qwK7q_zL.mjs",
       "byteSize": 1046214,
       "lineCount": 28,
       "maxLineLength": 960479,
@@ -17,7 +17,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\emacs-lisp-C9XAeP06.js",
+      "path": "src/webview/assets/emacs-lisp-C9XAeP06.js",
       "byteSize": 779902,
       "lineCount": 3,
       "maxLineLength": 779852,
@@ -25,7 +25,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\emacs-lisp-C9XAeP06.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/emacs-lisp-C9XAeP06.js",
       "byteSize": 779988,
       "lineCount": 8,
       "maxLineLength": 779825,
@@ -33,7 +33,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\index-CgwAo6pj.js",
+      "path": "src/webview/assets/index-CgwAo6pj.js",
       "byteSize": 6426203,
       "lineCount": 2897,
       "maxLineLength": 664312,
@@ -41,7 +41,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\cpp-CofmeUqb.js",
+      "path": "src/webview/assets/cpp-CofmeUqb.js",
       "byteSize": 626122,
       "lineCount": 3,
       "maxLineLength": 626080,
@@ -49,7 +49,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\wasm-CG6Dc4jp.js",
+      "path": "src/webview/assets/wasm-CG6Dc4jp.js",
       "byteSize": 622378,
       "lineCount": 3,
       "maxLineLength": 622335,
@@ -57,7 +57,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\wasm-CG6Dc4jp.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/wasm-CG6Dc4jp.js",
       "byteSize": 622474,
       "lineCount": 9,
       "maxLineLength": 622203,
@@ -65,7 +65,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\cpp-CofmeUqb.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/cpp-CofmeUqb.js",
       "byteSize": 626219,
       "lineCount": 11,
       "maxLineLength": 401808,
@@ -73,7 +73,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\index-DYqVWCHk.css",
+      "path": "src/webview/assets/index-DYqVWCHk.css",
       "byteSize": 303367,
       "lineCount": 33,
       "maxLineLength": 291275,
@@ -81,7 +81,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\wolfram-lXgVvXCa.js",
+      "path": "src/webview/assets/wolfram-lXgVvXCa.js",
       "byteSize": 262436,
       "lineCount": 3,
       "maxLineLength": 262390,
@@ -89,7 +89,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\wolfram-lXgVvXCa.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/wolfram-lXgVvXCa.js",
       "byteSize": 262519,
       "lineCount": 8,
       "maxLineLength": 262363,
@@ -97,7 +97,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\vue-vine-8moa0y9V.js",
+      "path": "src/webview/assets/vue-vine-8moa0y9V.js",
       "byteSize": 190266,
       "lineCount": 3,
       "maxLineLength": 190219,
@@ -105,7 +105,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\vue-vine-8moa0y9V.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/vue-vine-8moa0y9V.js",
       "byteSize": 190352,
       "lineCount": 9,
       "maxLineLength": 189785,
@@ -113,7 +113,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\angular-ts-BwZT4LLn.js",
+      "path": "src/webview/assets/angular-ts-BwZT4LLn.js",
       "byteSize": 183868,
       "lineCount": 3,
       "maxLineLength": 183819,
@@ -121,7 +121,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\angular-ts-BwZT4LLn.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/angular-ts-BwZT4LLn.js",
       "byteSize": 183992,
       "lineCount": 13,
       "maxLineLength": 181193,
@@ -129,7 +129,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\typescript-BPQ3VLAy.js",
+      "path": "src/webview/assets/typescript-BPQ3VLAy.js",
       "byteSize": 181128,
       "lineCount": 3,
       "maxLineLength": 181079,
@@ -137,7 +137,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\typescript-BPQ3VLAy.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/typescript-BPQ3VLAy.js",
       "byteSize": 181214,
       "lineCount": 8,
       "maxLineLength": 181052,
@@ -145,7 +145,7 @@
       "opaque": true
     },
     {
-      "path": "src\\.vite\\build\\main-CQwPb0Th.js",
+      "path": "src/.vite/build/main-CQwPb0Th.js",
       "byteSize": 1467971,
       "lineCount": 557,
       "maxLineLength": 179499,
@@ -153,7 +153,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\jsx-g9-lgVsj.js",
+      "path": "src/webview/assets/jsx-g9-lgVsj.js",
       "byteSize": 177833,
       "lineCount": 3,
       "maxLineLength": 177791,
@@ -161,7 +161,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\highlight-code-BC8DafoT.js",
+      "path": "src/webview/assets/highlight-code-BC8DafoT.js",
       "byteSize": 320929,
       "lineCount": 7,
       "maxLineLength": 177774,
@@ -169,7 +169,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\jsx-g9-lgVsj.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/jsx-g9-lgVsj.js",
       "byteSize": 177912,
       "lineCount": 8,
       "maxLineLength": 177764,
@@ -177,7 +177,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\tsx-COt5Ahok.js",
+      "path": "src/webview/assets/tsx-COt5Ahok.js",
       "byteSize": 175577,
       "lineCount": 3,
       "maxLineLength": 175535,
@@ -185,7 +185,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\tsx-COt5Ahok.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/tsx-COt5Ahok.js",
       "byteSize": 175656,
       "lineCount": 8,
       "maxLineLength": 175508,
@@ -193,7 +193,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\javascript-wDzz0qaB.js",
+      "path": "src/webview/assets/javascript-wDzz0qaB.js",
       "byteSize": 174875,
       "lineCount": 3,
       "maxLineLength": 174826,
@@ -201,7 +201,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\javascript-wDzz0qaB.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/javascript-wDzz0qaB.js",
       "byteSize": 174961,
       "lineCount": 8,
       "maxLineLength": 174799,
@@ -209,7 +209,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\objective-cpp-CLxacb5B.js",
+      "path": "src/webview/assets/objective-cpp-CLxacb5B.js",
       "byteSize": 172023,
       "lineCount": 3,
       "maxLineLength": 171971,
@@ -217,7 +217,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\objective-cpp-CLxacb5B.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/objective-cpp-CLxacb5B.js",
       "byteSize": 172112,
       "lineCount": 8,
       "maxLineLength": 171944,
@@ -225,7 +225,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\cytoscape.esm-DtBltrT8.js",
+      "path": "src/webview/assets/cytoscape.esm-DtBltrT8.js",
       "byteSize": 442459,
       "lineCount": 333,
       "maxLineLength": 161984,
@@ -233,7 +233,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\.vite\\build\\main-CQwPb0Th.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/.vite/build/main-CQwPb0Th.js",
       "byteSize": 1786185,
       "lineCount": 43540,
       "maxLineLength": 151814,
@@ -241,7 +241,7 @@
       "opaque": true
     },
     {
-      "path": "src\\.vite\\build\\worker.js",
+      "path": "src/.vite/build/worker.js",
       "byteSize": 841958,
       "lineCount": 305,
       "maxLineLength": 138424,
@@ -249,7 +249,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\mdx-Cmh6b_Ma.js",
+      "path": "src/webview/assets/mdx-Cmh6b_Ma.js",
       "byteSize": 136155,
       "lineCount": 3,
       "maxLineLength": 136113,
@@ -257,7 +257,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\mdx-Cmh6b_Ma.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/mdx-Cmh6b_Ma.js",
       "byteSize": 136234,
       "lineCount": 8,
       "maxLineLength": 136086,
@@ -265,7 +265,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\architectureDiagram-VXUJARFQ-Bf9AGjdF.js",
+      "path": "src/webview/assets/architectureDiagram-VXUJARFQ-Bf9AGjdF.js",
       "byteSize": 148681,
       "lineCount": 38,
       "maxLineLength": 131822,
@@ -273,7 +273,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\asciidoc-Dv7Oe6Be.js",
+      "path": "src/webview/assets/asciidoc-Dv7Oe6Be.js",
       "byteSize": 131559,
       "lineCount": 3,
       "maxLineLength": 131510,
@@ -281,7 +281,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\asciidoc-Dv7Oe6Be.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/asciidoc-Dv7Oe6Be.js",
       "byteSize": 131643,
       "lineCount": 8,
       "maxLineLength": 131483,
@@ -289,7 +289,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\highlight-code-BC8DafoT.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/highlight-code-BC8DafoT.js",
       "byteSize": 335272,
       "lineCount": 1834,
       "maxLineLength": 123083,
@@ -297,7 +297,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\ca-ES-CijHaX4j.js",
+      "path": "src/webview/assets/ca-ES-CijHaX4j.js",
       "byteSize": 123588,
       "lineCount": 3,
       "maxLineLength": 121578,
@@ -305,7 +305,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\ca-ES-CijHaX4j.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/ca-ES-CijHaX4j.js",
       "byteSize": 123659,
       "lineCount": 6,
       "maxLineLength": 121572,
@@ -313,7 +313,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\de-DE-DvioHLIr.js",
+      "path": "src/webview/assets/de-DE-DvioHLIr.js",
       "byteSize": 121255,
       "lineCount": 3,
       "maxLineLength": 120326,
@@ -321,7 +321,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\de-DE-DvioHLIr.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/de-DE-DvioHLIr.js",
       "byteSize": 121326,
       "lineCount": 6,
       "maxLineLength": 120320,
@@ -329,7 +329,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\es-419-DvKvHTcm.js",
+      "path": "src/webview/assets/es-419-DvKvHTcm.js",
       "byteSize": 120994,
       "lineCount": 3,
       "maxLineLength": 120119,
@@ -337,7 +337,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\es-419-DvKvHTcm.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/es-419-DvKvHTcm.js",
       "byteSize": 121066,
       "lineCount": 6,
       "maxLineLength": 120113,
@@ -345,7 +345,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\bg-BG-BSKM3PNn.js",
+      "path": "src/webview/assets/bg-BG-BSKM3PNn.js",
       "byteSize": 155509,
       "lineCount": 3,
       "maxLineLength": 119763,
@@ -353,7 +353,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\bg-BG-BSKM3PNn.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/bg-BG-BSKM3PNn.js",
       "byteSize": 155580,
       "lineCount": 6,
       "maxLineLength": 119757,
@@ -361,7 +361,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\lt-u9a51bU2.js",
+      "path": "src/webview/assets/lt-u9a51bU2.js",
       "byteSize": 122389,
       "lineCount": 3,
       "maxLineLength": 119054,
@@ -369,7 +369,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\lt-u9a51bU2.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/lt-u9a51bU2.js",
       "byteSize": 122457,
       "lineCount": 6,
       "maxLineLength": 119048,
@@ -377,7 +377,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\fr-CA-C6ZjRQEO.js",
+      "path": "src/webview/assets/fr-CA-C6ZjRQEO.js",
       "byteSize": 113323,
       "lineCount": 3,
       "maxLineLength": 111291,
@@ -385,7 +385,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\fr-CA-C6ZjRQEO.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/fr-CA-C6ZjRQEO.js",
       "byteSize": 113394,
       "lineCount": 6,
       "maxLineLength": 111285,
@@ -393,7 +393,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\php-CDn_0X-4.js",
+      "path": "src/webview/assets/php-CDn_0X-4.js",
       "byteSize": 111040,
       "lineCount": 3,
       "maxLineLength": 110998,
@@ -401,7 +401,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\php-CDn_0X-4.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/php-CDn_0X-4.js",
       "byteSize": 111121,
       "lineCount": 9,
       "maxLineLength": 110707,
@@ -409,7 +409,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\fr-FR-CcItAjk3.js",
+      "path": "src/webview/assets/fr-FR-CcItAjk3.js",
       "byteSize": 112015,
       "lineCount": 3,
       "maxLineLength": 110116,
@@ -417,7 +417,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\fr-FR-CcItAjk3.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/fr-FR-CcItAjk3.js",
       "byteSize": 112086,
       "lineCount": 6,
       "maxLineLength": 110110,
@@ -425,7 +425,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\my-MM-DKy8m325.js",
+      "path": "src/webview/assets/my-MM-DKy8m325.js",
       "byteSize": 183531,
       "lineCount": 3,
       "maxLineLength": 110088,
@@ -433,7 +433,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\my-MM-DKy8m325.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/my-MM-DKy8m325.js",
       "byteSize": 183602,
       "lineCount": 6,
       "maxLineLength": 110082,
@@ -441,7 +441,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\ml-BhIiRBTO.js",
+      "path": "src/webview/assets/ml-BhIiRBTO.js",
       "byteSize": 181988,
       "lineCount": 3,
       "maxLineLength": 109120,
@@ -449,7 +449,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\ml-BhIiRBTO.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/ml-BhIiRBTO.js",
       "byteSize": 182056,
       "lineCount": 6,
       "maxLineLength": 109114,
@@ -457,7 +457,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\el-GR-CQPL9yYY.js",
+      "path": "src/webview/assets/el-GR-CQPL9yYY.js",
       "byteSize": 143186,
       "lineCount": 3,
       "maxLineLength": 108822,
@@ -465,7 +465,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\el-GR-CQPL9yYY.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/el-GR-CQPL9yYY.js",
       "byteSize": 143257,
       "lineCount": 6,
       "maxLineLength": 108816,
@@ -473,7 +473,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\es-ES-C6-8BPZQ.js",
+      "path": "src/webview/assets/es-ES-C6-8BPZQ.js",
       "byteSize": 108352,
       "lineCount": 3,
       "maxLineLength": 107543,
@@ -481,7 +481,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\es-ES-C6-8BPZQ.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/es-ES-C6-8BPZQ.js",
       "byteSize": 108423,
       "lineCount": 6,
       "maxLineLength": 107537,
@@ -489,7 +489,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\tl-EU_pllTV.js",
+      "path": "src/webview/assets/tl-EU_pllTV.js",
       "byteSize": 106768,
       "lineCount": 3,
       "maxLineLength": 106702,
@@ -497,7 +497,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\tl-EU_pllTV.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/tl-EU_pllTV.js",
       "byteSize": 106836,
       "lineCount": 6,
       "maxLineLength": 106696,
@@ -505,7 +505,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\sl-SI-CZIh_qsb.js",
+      "path": "src/webview/assets/sl-SI-CZIh_qsb.js",
       "byteSize": 107409,
       "lineCount": 3,
       "maxLineLength": 106480,
@@ -513,7 +513,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\sl-SI-CZIh_qsb.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/sl-SI-CZIh_qsb.js",
       "byteSize": 107480,
       "lineCount": 6,
       "maxLineLength": 106474,
@@ -521,7 +521,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\hr-HR-C_VoUZXt.js",
+      "path": "src/webview/assets/hr-HR-C_VoUZXt.js",
       "byteSize": 107263,
       "lineCount": 3,
       "maxLineLength": 105975,
@@ -529,7 +529,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\hr-HR-C_VoUZXt.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/hr-HR-C_VoUZXt.js",
       "byteSize": 107334,
       "lineCount": 6,
       "maxLineLength": 105969,
@@ -537,7 +537,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\kn-IN-C9vqFr6M.js",
+      "path": "src/webview/assets/kn-IN-C9vqFr6M.js",
       "byteSize": 171267,
       "lineCount": 3,
       "maxLineLength": 105512,
@@ -545,7 +545,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\kn-IN-C9vqFr6M.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/kn-IN-C9vqFr6M.js",
       "byteSize": 171338,
       "lineCount": 6,
       "maxLineLength": 105506,
@@ -553,7 +553,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\objective-c-DXmwc3jG.js",
+      "path": "src/webview/assets/objective-c-DXmwc3jG.js",
       "byteSize": 105462,
       "lineCount": 3,
       "maxLineLength": 105412,
@@ -561,7 +561,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\objective-c-DXmwc3jG.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/objective-c-DXmwc3jG.js",
       "byteSize": 105549,
       "lineCount": 8,
       "maxLineLength": 105385,
@@ -569,7 +569,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\pt-BR-DJefvKar.js",
+      "path": "src/webview/assets/pt-BR-DJefvKar.js",
       "byteSize": 106668,
       "lineCount": 3,
       "maxLineLength": 105378,
@@ -577,7 +577,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\pt-BR-DJefvKar.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/pt-BR-DJefvKar.js",
       "byteSize": 106739,
       "lineCount": 6,
       "maxLineLength": 105372,
@@ -585,7 +585,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\cs-CZ-HsObnb5w.js",
+      "path": "src/webview/assets/cs-CZ-HsObnb5w.js",
       "byteSize": 108223,
       "lineCount": 3,
       "maxLineLength": 103821,
@@ -593,7 +593,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\cs-CZ-HsObnb5w.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/cs-CZ-HsObnb5w.js",
       "byteSize": 108294,
       "lineCount": 6,
       "maxLineLength": 103815,
@@ -601,7 +601,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\blade-DVc8C-J4.js",
+      "path": "src/webview/assets/blade-DVc8C-J4.js",
       "byteSize": 103846,
       "lineCount": 3,
       "maxLineLength": 103667,
@@ -609,7 +609,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\hi-IN-CyX5PkQ2.js",
+      "path": "src/webview/assets/hi-IN-CyX5PkQ2.js",
       "byteSize": 159735,
       "lineCount": 3,
       "maxLineLength": 103386,
@@ -617,7 +617,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\hi-IN-CyX5PkQ2.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/hi-IN-CyX5PkQ2.js",
       "byteSize": 159806,
       "lineCount": 6,
       "maxLineLength": 103380,
@@ -625,7 +625,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\blade-DVc8C-J4.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/blade-DVc8C-J4.js",
       "byteSize": 103929,
       "lineCount": 9,
       "maxLineLength": 103326,
@@ -633,7 +633,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\ro-RO-xu8axecZ.js",
+      "path": "src/webview/assets/ro-RO-xu8axecZ.js",
       "byteSize": 103194,
       "lineCount": 3,
       "maxLineLength": 100951,
@@ -641,7 +641,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\ro-RO-xu8axecZ.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/ro-RO-xu8axecZ.js",
       "byteSize": 103265,
       "lineCount": 6,
       "maxLineLength": 100945,
@@ -649,7 +649,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\ru-RU-BVT30C0F.js",
+      "path": "src/webview/assets/ru-RU-BVT30C0F.js",
       "byteSize": 131942,
       "lineCount": 3,
       "maxLineLength": 100393,
@@ -657,7 +657,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\ru-RU-BVT30C0F.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/ru-RU-BVT30C0F.js",
       "byteSize": 132013,
       "lineCount": 6,
       "maxLineLength": 100387,
@@ -665,7 +665,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\ta-IN-CVQuBYJU.js",
+      "path": "src/webview/assets/ta-IN-CVQuBYJU.js",
       "byteSize": 164732,
       "lineCount": 3,
       "maxLineLength": 100259,
@@ -673,7 +673,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\ta-IN-CVQuBYJU.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/ta-IN-CVQuBYJU.js",
       "byteSize": 164803,
       "lineCount": 6,
       "maxLineLength": 100253,
@@ -681,7 +681,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\uk-UA-KwSmHKUh.js",
+      "path": "src/webview/assets/uk-UA-KwSmHKUh.js",
       "byteSize": 131409,
       "lineCount": 3,
       "maxLineLength": 100192,
@@ -689,7 +689,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\uk-UA-KwSmHKUh.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/uk-UA-KwSmHKUh.js",
       "byteSize": 131480,
       "lineCount": 6,
       "maxLineLength": 100186,
@@ -697,7 +697,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\ka-GE-DOXOPHnK.js",
+      "path": "src/webview/assets/ka-GE-DOXOPHnK.js",
       "byteSize": 163013,
       "lineCount": 3,
       "maxLineLength": 99822,
@@ -705,7 +705,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\ka-GE-DOXOPHnK.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/ka-GE-DOXOPHnK.js",
       "byteSize": 163084,
       "lineCount": 6,
       "maxLineLength": 99816,
@@ -713,7 +713,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\pl-PL-Cg91CTIZ.js",
+      "path": "src/webview/assets/pl-PL-Cg91CTIZ.js",
       "byteSize": 100802,
       "lineCount": 3,
       "maxLineLength": 98816,
@@ -721,7 +721,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\pl-PL-Cg91CTIZ.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/pl-PL-Cg91CTIZ.js",
       "byteSize": 100873,
       "lineCount": 6,
       "maxLineLength": 98810,
@@ -729,7 +729,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\hy-AM-Dzc2KYlW.js",
+      "path": "src/webview/assets/hy-AM-Dzc2KYlW.js",
       "byteSize": 128524,
       "lineCount": 3,
       "maxLineLength": 98652,
@@ -737,7 +737,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\hy-AM-Dzc2KYlW.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/hy-AM-Dzc2KYlW.js",
       "byteSize": 128595,
       "lineCount": 6,
       "maxLineLength": 98646,
@@ -745,7 +745,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\sq-AL-CVjHFe3t.js",
+      "path": "src/webview/assets/sq-AL-CVjHFe3t.js",
       "byteSize": 100762,
       "lineCount": 3,
       "maxLineLength": 98410,
@@ -753,7 +753,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\sq-AL-CVjHFe3t.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/sq-AL-CVjHFe3t.js",
       "byteSize": 100833,
       "lineCount": 6,
       "maxLineLength": 98404,
@@ -761,7 +761,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\mk-MK-n6p_7YZJ.js",
+      "path": "src/webview/assets/mk-MK-n6p_7YZJ.js",
       "byteSize": 126450,
       "lineCount": 3,
       "maxLineLength": 97794,
@@ -769,7 +769,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\mk-MK-n6p_7YZJ.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/mk-MK-n6p_7YZJ.js",
       "byteSize": 126521,
       "lineCount": 6,
       "maxLineLength": 97788,
@@ -777,7 +777,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\hu-HU-CFP2Bg0x.js",
+      "path": "src/webview/assets/hu-HU-CFP2Bg0x.js",
       "byteSize": 101693,
       "lineCount": 3,
       "maxLineLength": 97609,
@@ -785,7 +785,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\hu-HU-CFP2Bg0x.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/hu-HU-CFP2Bg0x.js",
       "byteSize": 101764,
       "lineCount": 6,
       "maxLineLength": 97603,
@@ -793,7 +793,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\sr-RS-Wd1ub07i.js",
+      "path": "src/webview/assets/sr-RS-Wd1ub07i.js",
       "byteSize": 124501,
       "lineCount": 3,
       "maxLineLength": 96996,
@@ -801,7 +801,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\sr-RS-Wd1ub07i.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/sr-RS-Wd1ub07i.js",
       "byteSize": 124572,
       "lineCount": 6,
       "maxLineLength": 96990,
@@ -809,7 +809,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\bn-BD-2tg82bxW.js",
+      "path": "src/webview/assets/bn-BD-2tg82bxW.js",
       "byteSize": 152190,
       "lineCount": 3,
       "maxLineLength": 96351,
@@ -817,7 +817,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\bn-BD-2tg82bxW.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/bn-BD-2tg82bxW.js",
       "byteSize": 152261,
       "lineCount": 6,
       "maxLineLength": 96345,
@@ -825,7 +825,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\vi-VN-Bw4Iax46.js",
+      "path": "src/webview/assets/vi-VN-Bw4Iax46.js",
       "byteSize": 107387,
       "lineCount": 3,
       "maxLineLength": 96026,
@@ -833,7 +833,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\vi-VN-Bw4Iax46.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/vi-VN-Bw4Iax46.js",
       "byteSize": 107458,
       "lineCount": 6,
       "maxLineLength": 96020,
@@ -841,7 +841,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\kk-sW0PbZiX.js",
+      "path": "src/webview/assets/kk-sW0PbZiX.js",
       "byteSize": 124317,
       "lineCount": 3,
       "maxLineLength": 95988,
@@ -849,7 +849,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\kk-sW0PbZiX.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/kk-sW0PbZiX.js",
       "byteSize": 124385,
       "lineCount": 6,
       "maxLineLength": 95982,
@@ -857,7 +857,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\mn-B9h66lOl.js",
+      "path": "src/webview/assets/mn-B9h66lOl.js",
       "byteSize": 122009,
       "lineCount": 3,
       "maxLineLength": 95153,
@@ -865,7 +865,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\mn-B9h66lOl.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/mn-B9h66lOl.js",
       "byteSize": 122077,
       "lineCount": 6,
       "maxLineLength": 95147,
@@ -873,7 +873,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\ar-CAgWeId9.js",
+      "path": "src/webview/assets/ar-CAgWeId9.js",
       "byteSize": 120273,
       "lineCount": 3,
       "maxLineLength": 95058,
@@ -881,7 +881,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\ar-CAgWeId9.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/ar-CAgWeId9.js",
       "byteSize": 120341,
       "lineCount": 6,
       "maxLineLength": 95052,
@@ -889,7 +889,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\ko-KR-FlTcokk0.js",
+      "path": "src/webview/assets/ko-KR-FlTcokk0.js",
       "byteSize": 122311,
       "lineCount": 3,
       "maxLineLength": 94908,
@@ -897,7 +897,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\ko-KR-FlTcokk0.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/ko-KR-FlTcokk0.js",
       "byteSize": 122382,
       "lineCount": 6,
       "maxLineLength": 94902,
@@ -905,7 +905,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\ur-DLcUVgnr.js",
+      "path": "src/webview/assets/ur-DLcUVgnr.js",
       "byteSize": 118830,
       "lineCount": 3,
       "maxLineLength": 94245,
@@ -913,7 +913,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\ur-DLcUVgnr.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/ur-DLcUVgnr.js",
       "byteSize": 118898,
       "lineCount": 6,
       "maxLineLength": 94239,
@@ -921,7 +921,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\mr-IN-DBcNVzr7.js",
+      "path": "src/webview/assets/mr-IN-DBcNVzr7.js",
       "byteSize": 144574,
       "lineCount": 3,
       "maxLineLength": 93785,
@@ -929,7 +929,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\mr-IN-DBcNVzr7.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/mr-IN-DBcNVzr7.js",
       "byteSize": 144645,
       "lineCount": 6,
       "maxLineLength": 93779,
@@ -937,7 +937,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\pa-nK-8pqDR.js",
+      "path": "src/webview/assets/pa-nK-8pqDR.js",
       "byteSize": 140764,
       "lineCount": 3,
       "maxLineLength": 93096,
@@ -945,7 +945,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\pa-nK-8pqDR.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/pa-nK-8pqDR.js",
       "byteSize": 140832,
       "lineCount": 6,
       "maxLineLength": 93090,
@@ -953,7 +953,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\th-TH-D5ooVEsu.js",
+      "path": "src/webview/assets/th-TH-D5ooVEsu.js",
       "byteSize": 143685,
       "lineCount": 3,
       "maxLineLength": 91614,
@@ -961,7 +961,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\th-TH-D5ooVEsu.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/th-TH-D5ooVEsu.js",
       "byteSize": 143756,
       "lineCount": 6,
       "maxLineLength": 91608,
@@ -969,7 +969,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\te-IN-BKbRSTXE.js",
+      "path": "src/webview/assets/te-IN-BKbRSTXE.js",
       "byteSize": 142116,
       "lineCount": 3,
       "maxLineLength": 89712,
@@ -977,7 +977,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\te-IN-BKbRSTXE.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/te-IN-BKbRSTXE.js",
       "byteSize": 142187,
       "lineCount": 6,
       "maxLineLength": 89706,
@@ -985,7 +985,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\ja-JP-DVHidDTb.js",
+      "path": "src/webview/assets/ja-JP-DVHidDTb.js",
       "byteSize": 120119,
       "lineCount": 3,
       "maxLineLength": 86754,
@@ -993,7 +993,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\ja-JP-DVHidDTb.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/ja-JP-DVHidDTb.js",
       "byteSize": 120190,
       "lineCount": 6,
       "maxLineLength": 86748,
@@ -1001,7 +1001,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\am-BEJQWIjr.js",
+      "path": "src/webview/assets/am-BEJQWIjr.js",
       "byteSize": 117744,
       "lineCount": 3,
       "maxLineLength": 84736,
@@ -1009,7 +1009,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\am-BEJQWIjr.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/am-BEJQWIjr.js",
       "byteSize": 117812,
       "lineCount": 6,
       "maxLineLength": 84730,
@@ -1017,7 +1017,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\gu-IN-BqR45a-h.js",
+      "path": "src/webview/assets/gu-IN-BqR45a-h.js",
       "byteSize": 157143,
       "lineCount": 4,
       "maxLineLength": 82940,
@@ -1025,7 +1025,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\gu-IN-BqR45a-h.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/gu-IN-BqR45a-h.js",
       "byteSize": 157215,
       "lineCount": 7,
       "maxLineLength": 82919,
@@ -1033,7 +1033,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\treemap-KMMF4GRG-CK1q9nlx.js",
+      "path": "src/webview/assets/treemap-KMMF4GRG-CK1q9nlx.js",
       "byteSize": 330125,
       "lineCount": 130,
       "maxLineLength": 76171,
@@ -1043,7 +1043,7 @@
   ],
   "largeEntries": [
     {
-      "path": "src\\webview\\assets\\pdf.worker.min-qwK7q_zL.mjs",
+      "path": "src/webview/assets/pdf.worker.min-qwK7q_zL.mjs",
       "byteSize": 1046214,
       "lineCount": 28,
       "maxLineLength": 960479,
@@ -1051,7 +1051,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\emacs-lisp-C9XAeP06.js",
+      "path": "src/webview/assets/emacs-lisp-C9XAeP06.js",
       "byteSize": 779902,
       "lineCount": 3,
       "maxLineLength": 779852,
@@ -1059,7 +1059,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\emacs-lisp-C9XAeP06.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/emacs-lisp-C9XAeP06.js",
       "byteSize": 779988,
       "lineCount": 8,
       "maxLineLength": 779825,
@@ -1067,7 +1067,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\index-CgwAo6pj.js",
+      "path": "src/webview/assets/index-CgwAo6pj.js",
       "byteSize": 6426203,
       "lineCount": 2897,
       "maxLineLength": 664312,
@@ -1075,7 +1075,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\cpp-CofmeUqb.js",
+      "path": "src/webview/assets/cpp-CofmeUqb.js",
       "byteSize": 626122,
       "lineCount": 3,
       "maxLineLength": 626080,
@@ -1083,7 +1083,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\wasm-CG6Dc4jp.js",
+      "path": "src/webview/assets/wasm-CG6Dc4jp.js",
       "byteSize": 622378,
       "lineCount": 3,
       "maxLineLength": 622335,
@@ -1091,7 +1091,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\wasm-CG6Dc4jp.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/wasm-CG6Dc4jp.js",
       "byteSize": 622474,
       "lineCount": 9,
       "maxLineLength": 622203,
@@ -1099,7 +1099,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\cpp-CofmeUqb.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/cpp-CofmeUqb.js",
       "byteSize": 626219,
       "lineCount": 11,
       "maxLineLength": 401808,
@@ -1107,7 +1107,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\index-DYqVWCHk.css",
+      "path": "src/webview/assets/index-DYqVWCHk.css",
       "byteSize": 303367,
       "lineCount": 33,
       "maxLineLength": 291275,
@@ -1115,7 +1115,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\wolfram-lXgVvXCa.js",
+      "path": "src/webview/assets/wolfram-lXgVvXCa.js",
       "byteSize": 262436,
       "lineCount": 3,
       "maxLineLength": 262390,
@@ -1123,7 +1123,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\wolfram-lXgVvXCa.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/wolfram-lXgVvXCa.js",
       "byteSize": 262519,
       "lineCount": 8,
       "maxLineLength": 262363,
@@ -1131,7 +1131,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\vue-vine-8moa0y9V.js",
+      "path": "src/webview/assets/vue-vine-8moa0y9V.js",
       "byteSize": 190266,
       "lineCount": 3,
       "maxLineLength": 190219,
@@ -1139,7 +1139,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\vue-vine-8moa0y9V.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/vue-vine-8moa0y9V.js",
       "byteSize": 190352,
       "lineCount": 9,
       "maxLineLength": 189785,
@@ -1147,7 +1147,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\angular-ts-BwZT4LLn.js",
+      "path": "src/webview/assets/angular-ts-BwZT4LLn.js",
       "byteSize": 183868,
       "lineCount": 3,
       "maxLineLength": 183819,
@@ -1155,7 +1155,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\angular-ts-BwZT4LLn.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/angular-ts-BwZT4LLn.js",
       "byteSize": 183992,
       "lineCount": 13,
       "maxLineLength": 181193,
@@ -1163,7 +1163,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\typescript-BPQ3VLAy.js",
+      "path": "src/webview/assets/typescript-BPQ3VLAy.js",
       "byteSize": 181128,
       "lineCount": 3,
       "maxLineLength": 181079,
@@ -1171,7 +1171,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\typescript-BPQ3VLAy.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/typescript-BPQ3VLAy.js",
       "byteSize": 181214,
       "lineCount": 8,
       "maxLineLength": 181052,
@@ -1179,7 +1179,7 @@
       "opaque": true
     },
     {
-      "path": "src\\.vite\\build\\main-CQwPb0Th.js",
+      "path": "src/.vite/build/main-CQwPb0Th.js",
       "byteSize": 1467971,
       "lineCount": 557,
       "maxLineLength": 179499,
@@ -1187,7 +1187,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\jsx-g9-lgVsj.js",
+      "path": "src/webview/assets/jsx-g9-lgVsj.js",
       "byteSize": 177833,
       "lineCount": 3,
       "maxLineLength": 177791,
@@ -1195,7 +1195,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\highlight-code-BC8DafoT.js",
+      "path": "src/webview/assets/highlight-code-BC8DafoT.js",
       "byteSize": 320929,
       "lineCount": 7,
       "maxLineLength": 177774,
@@ -1203,7 +1203,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\jsx-g9-lgVsj.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/jsx-g9-lgVsj.js",
       "byteSize": 177912,
       "lineCount": 8,
       "maxLineLength": 177764,
@@ -1211,7 +1211,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\tsx-COt5Ahok.js",
+      "path": "src/webview/assets/tsx-COt5Ahok.js",
       "byteSize": 175577,
       "lineCount": 3,
       "maxLineLength": 175535,
@@ -1219,7 +1219,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\tsx-COt5Ahok.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/tsx-COt5Ahok.js",
       "byteSize": 175656,
       "lineCount": 8,
       "maxLineLength": 175508,
@@ -1227,7 +1227,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\javascript-wDzz0qaB.js",
+      "path": "src/webview/assets/javascript-wDzz0qaB.js",
       "byteSize": 174875,
       "lineCount": 3,
       "maxLineLength": 174826,
@@ -1235,7 +1235,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\javascript-wDzz0qaB.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/javascript-wDzz0qaB.js",
       "byteSize": 174961,
       "lineCount": 8,
       "maxLineLength": 174799,
@@ -1243,7 +1243,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\objective-cpp-CLxacb5B.js",
+      "path": "src/webview/assets/objective-cpp-CLxacb5B.js",
       "byteSize": 172023,
       "lineCount": 3,
       "maxLineLength": 171971,
@@ -1251,7 +1251,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\objective-cpp-CLxacb5B.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/objective-cpp-CLxacb5B.js",
       "byteSize": 172112,
       "lineCount": 8,
       "maxLineLength": 171944,
@@ -1259,7 +1259,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\cytoscape.esm-DtBltrT8.js",
+      "path": "src/webview/assets/cytoscape.esm-DtBltrT8.js",
       "byteSize": 442459,
       "lineCount": 333,
       "maxLineLength": 161984,
@@ -1267,7 +1267,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\.vite\\build\\main-CQwPb0Th.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/.vite/build/main-CQwPb0Th.js",
       "byteSize": 1786185,
       "lineCount": 43540,
       "maxLineLength": 151814,
@@ -1275,7 +1275,7 @@
       "opaque": true
     },
     {
-      "path": "src\\.vite\\build\\worker.js",
+      "path": "src/.vite/build/worker.js",
       "byteSize": 841958,
       "lineCount": 305,
       "maxLineLength": 138424,
@@ -1283,7 +1283,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\mdx-Cmh6b_Ma.js",
+      "path": "src/webview/assets/mdx-Cmh6b_Ma.js",
       "byteSize": 136155,
       "lineCount": 3,
       "maxLineLength": 136113,
@@ -1291,7 +1291,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\mdx-Cmh6b_Ma.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/mdx-Cmh6b_Ma.js",
       "byteSize": 136234,
       "lineCount": 8,
       "maxLineLength": 136086,
@@ -1299,7 +1299,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\architectureDiagram-VXUJARFQ-Bf9AGjdF.js",
+      "path": "src/webview/assets/architectureDiagram-VXUJARFQ-Bf9AGjdF.js",
       "byteSize": 148681,
       "lineCount": 38,
       "maxLineLength": 131822,
@@ -1307,7 +1307,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\asciidoc-Dv7Oe6Be.js",
+      "path": "src/webview/assets/asciidoc-Dv7Oe6Be.js",
       "byteSize": 131559,
       "lineCount": 3,
       "maxLineLength": 131510,
@@ -1315,7 +1315,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\asciidoc-Dv7Oe6Be.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/asciidoc-Dv7Oe6Be.js",
       "byteSize": 131643,
       "lineCount": 8,
       "maxLineLength": 131483,
@@ -1323,7 +1323,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\highlight-code-BC8DafoT.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/highlight-code-BC8DafoT.js",
       "byteSize": 335272,
       "lineCount": 1834,
       "maxLineLength": 123083,
@@ -1331,7 +1331,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\ca-ES-CijHaX4j.js",
+      "path": "src/webview/assets/ca-ES-CijHaX4j.js",
       "byteSize": 123588,
       "lineCount": 3,
       "maxLineLength": 121578,
@@ -1339,7 +1339,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\ca-ES-CijHaX4j.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/ca-ES-CijHaX4j.js",
       "byteSize": 123659,
       "lineCount": 6,
       "maxLineLength": 121572,
@@ -1347,7 +1347,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\de-DE-DvioHLIr.js",
+      "path": "src/webview/assets/de-DE-DvioHLIr.js",
       "byteSize": 121255,
       "lineCount": 3,
       "maxLineLength": 120326,
@@ -1355,7 +1355,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\de-DE-DvioHLIr.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/de-DE-DvioHLIr.js",
       "byteSize": 121326,
       "lineCount": 6,
       "maxLineLength": 120320,
@@ -1363,7 +1363,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\es-419-DvKvHTcm.js",
+      "path": "src/webview/assets/es-419-DvKvHTcm.js",
       "byteSize": 120994,
       "lineCount": 3,
       "maxLineLength": 120119,
@@ -1371,7 +1371,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\es-419-DvKvHTcm.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/es-419-DvKvHTcm.js",
       "byteSize": 121066,
       "lineCount": 6,
       "maxLineLength": 120113,
@@ -1379,7 +1379,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\bg-BG-BSKM3PNn.js",
+      "path": "src/webview/assets/bg-BG-BSKM3PNn.js",
       "byteSize": 155509,
       "lineCount": 3,
       "maxLineLength": 119763,
@@ -1387,7 +1387,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\bg-BG-BSKM3PNn.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/bg-BG-BSKM3PNn.js",
       "byteSize": 155580,
       "lineCount": 6,
       "maxLineLength": 119757,
@@ -1395,7 +1395,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\lt-u9a51bU2.js",
+      "path": "src/webview/assets/lt-u9a51bU2.js",
       "byteSize": 122389,
       "lineCount": 3,
       "maxLineLength": 119054,
@@ -1403,7 +1403,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\lt-u9a51bU2.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/lt-u9a51bU2.js",
       "byteSize": 122457,
       "lineCount": 6,
       "maxLineLength": 119048,
@@ -1411,7 +1411,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\fr-CA-C6ZjRQEO.js",
+      "path": "src/webview/assets/fr-CA-C6ZjRQEO.js",
       "byteSize": 113323,
       "lineCount": 3,
       "maxLineLength": 111291,
@@ -1419,7 +1419,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\fr-CA-C6ZjRQEO.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/fr-CA-C6ZjRQEO.js",
       "byteSize": 113394,
       "lineCount": 6,
       "maxLineLength": 111285,
@@ -1427,7 +1427,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\php-CDn_0X-4.js",
+      "path": "src/webview/assets/php-CDn_0X-4.js",
       "byteSize": 111040,
       "lineCount": 3,
       "maxLineLength": 110998,
@@ -1435,7 +1435,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\php-CDn_0X-4.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/php-CDn_0X-4.js",
       "byteSize": 111121,
       "lineCount": 9,
       "maxLineLength": 110707,
@@ -1443,7 +1443,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\fr-FR-CcItAjk3.js",
+      "path": "src/webview/assets/fr-FR-CcItAjk3.js",
       "byteSize": 112015,
       "lineCount": 3,
       "maxLineLength": 110116,
@@ -1451,7 +1451,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\fr-FR-CcItAjk3.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/fr-FR-CcItAjk3.js",
       "byteSize": 112086,
       "lineCount": 6,
       "maxLineLength": 110110,
@@ -1459,7 +1459,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\my-MM-DKy8m325.js",
+      "path": "src/webview/assets/my-MM-DKy8m325.js",
       "byteSize": 183531,
       "lineCount": 3,
       "maxLineLength": 110088,
@@ -1467,7 +1467,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\my-MM-DKy8m325.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/my-MM-DKy8m325.js",
       "byteSize": 183602,
       "lineCount": 6,
       "maxLineLength": 110082,
@@ -1475,7 +1475,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\ml-BhIiRBTO.js",
+      "path": "src/webview/assets/ml-BhIiRBTO.js",
       "byteSize": 181988,
       "lineCount": 3,
       "maxLineLength": 109120,
@@ -1483,7 +1483,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\ml-BhIiRBTO.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/ml-BhIiRBTO.js",
       "byteSize": 182056,
       "lineCount": 6,
       "maxLineLength": 109114,
@@ -1491,7 +1491,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\el-GR-CQPL9yYY.js",
+      "path": "src/webview/assets/el-GR-CQPL9yYY.js",
       "byteSize": 143186,
       "lineCount": 3,
       "maxLineLength": 108822,
@@ -1499,7 +1499,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\el-GR-CQPL9yYY.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/el-GR-CQPL9yYY.js",
       "byteSize": 143257,
       "lineCount": 6,
       "maxLineLength": 108816,
@@ -1507,7 +1507,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\es-ES-C6-8BPZQ.js",
+      "path": "src/webview/assets/es-ES-C6-8BPZQ.js",
       "byteSize": 108352,
       "lineCount": 3,
       "maxLineLength": 107543,
@@ -1515,7 +1515,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\es-ES-C6-8BPZQ.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/es-ES-C6-8BPZQ.js",
       "byteSize": 108423,
       "lineCount": 6,
       "maxLineLength": 107537,
@@ -1523,7 +1523,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\tl-EU_pllTV.js",
+      "path": "src/webview/assets/tl-EU_pllTV.js",
       "byteSize": 106768,
       "lineCount": 3,
       "maxLineLength": 106702,
@@ -1531,7 +1531,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\tl-EU_pllTV.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/tl-EU_pllTV.js",
       "byteSize": 106836,
       "lineCount": 6,
       "maxLineLength": 106696,
@@ -1539,7 +1539,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\sl-SI-CZIh_qsb.js",
+      "path": "src/webview/assets/sl-SI-CZIh_qsb.js",
       "byteSize": 107409,
       "lineCount": 3,
       "maxLineLength": 106480,
@@ -1547,7 +1547,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\sl-SI-CZIh_qsb.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/sl-SI-CZIh_qsb.js",
       "byteSize": 107480,
       "lineCount": 6,
       "maxLineLength": 106474,
@@ -1555,7 +1555,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\hr-HR-C_VoUZXt.js",
+      "path": "src/webview/assets/hr-HR-C_VoUZXt.js",
       "byteSize": 107263,
       "lineCount": 3,
       "maxLineLength": 105975,
@@ -1563,7 +1563,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\hr-HR-C_VoUZXt.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/hr-HR-C_VoUZXt.js",
       "byteSize": 107334,
       "lineCount": 6,
       "maxLineLength": 105969,
@@ -1571,7 +1571,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\kn-IN-C9vqFr6M.js",
+      "path": "src/webview/assets/kn-IN-C9vqFr6M.js",
       "byteSize": 171267,
       "lineCount": 3,
       "maxLineLength": 105512,
@@ -1579,7 +1579,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\kn-IN-C9vqFr6M.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/kn-IN-C9vqFr6M.js",
       "byteSize": 171338,
       "lineCount": 6,
       "maxLineLength": 105506,
@@ -1587,7 +1587,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\objective-c-DXmwc3jG.js",
+      "path": "src/webview/assets/objective-c-DXmwc3jG.js",
       "byteSize": 105462,
       "lineCount": 3,
       "maxLineLength": 105412,
@@ -1595,7 +1595,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\objective-c-DXmwc3jG.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/objective-c-DXmwc3jG.js",
       "byteSize": 105549,
       "lineCount": 8,
       "maxLineLength": 105385,
@@ -1603,7 +1603,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\pt-BR-DJefvKar.js",
+      "path": "src/webview/assets/pt-BR-DJefvKar.js",
       "byteSize": 106668,
       "lineCount": 3,
       "maxLineLength": 105378,
@@ -1611,7 +1611,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\pt-BR-DJefvKar.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/pt-BR-DJefvKar.js",
       "byteSize": 106739,
       "lineCount": 6,
       "maxLineLength": 105372,
@@ -1619,7 +1619,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\cs-CZ-HsObnb5w.js",
+      "path": "src/webview/assets/cs-CZ-HsObnb5w.js",
       "byteSize": 108223,
       "lineCount": 3,
       "maxLineLength": 103821,
@@ -1627,7 +1627,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\cs-CZ-HsObnb5w.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/cs-CZ-HsObnb5w.js",
       "byteSize": 108294,
       "lineCount": 6,
       "maxLineLength": 103815,
@@ -1635,7 +1635,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\blade-DVc8C-J4.js",
+      "path": "src/webview/assets/blade-DVc8C-J4.js",
       "byteSize": 103846,
       "lineCount": 3,
       "maxLineLength": 103667,
@@ -1643,7 +1643,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\hi-IN-CyX5PkQ2.js",
+      "path": "src/webview/assets/hi-IN-CyX5PkQ2.js",
       "byteSize": 159735,
       "lineCount": 3,
       "maxLineLength": 103386,
@@ -1651,7 +1651,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\hi-IN-CyX5PkQ2.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/hi-IN-CyX5PkQ2.js",
       "byteSize": 159806,
       "lineCount": 6,
       "maxLineLength": 103380,
@@ -1659,7 +1659,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\blade-DVc8C-J4.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/blade-DVc8C-J4.js",
       "byteSize": 103929,
       "lineCount": 9,
       "maxLineLength": 103326,
@@ -1667,7 +1667,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\ro-RO-xu8axecZ.js",
+      "path": "src/webview/assets/ro-RO-xu8axecZ.js",
       "byteSize": 103194,
       "lineCount": 3,
       "maxLineLength": 100951,
@@ -1675,7 +1675,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\ro-RO-xu8axecZ.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/ro-RO-xu8axecZ.js",
       "byteSize": 103265,
       "lineCount": 6,
       "maxLineLength": 100945,
@@ -1683,7 +1683,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\ru-RU-BVT30C0F.js",
+      "path": "src/webview/assets/ru-RU-BVT30C0F.js",
       "byteSize": 131942,
       "lineCount": 3,
       "maxLineLength": 100393,
@@ -1691,7 +1691,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\ru-RU-BVT30C0F.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/ru-RU-BVT30C0F.js",
       "byteSize": 132013,
       "lineCount": 6,
       "maxLineLength": 100387,
@@ -1699,7 +1699,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\ta-IN-CVQuBYJU.js",
+      "path": "src/webview/assets/ta-IN-CVQuBYJU.js",
       "byteSize": 164732,
       "lineCount": 3,
       "maxLineLength": 100259,
@@ -1707,7 +1707,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\ta-IN-CVQuBYJU.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/ta-IN-CVQuBYJU.js",
       "byteSize": 164803,
       "lineCount": 6,
       "maxLineLength": 100253,
@@ -1715,7 +1715,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\uk-UA-KwSmHKUh.js",
+      "path": "src/webview/assets/uk-UA-KwSmHKUh.js",
       "byteSize": 131409,
       "lineCount": 3,
       "maxLineLength": 100192,
@@ -1723,7 +1723,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\uk-UA-KwSmHKUh.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/uk-UA-KwSmHKUh.js",
       "byteSize": 131480,
       "lineCount": 6,
       "maxLineLength": 100186,
@@ -1731,7 +1731,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\ka-GE-DOXOPHnK.js",
+      "path": "src/webview/assets/ka-GE-DOXOPHnK.js",
       "byteSize": 163013,
       "lineCount": 3,
       "maxLineLength": 99822,
@@ -1739,7 +1739,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\ka-GE-DOXOPHnK.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/ka-GE-DOXOPHnK.js",
       "byteSize": 163084,
       "lineCount": 6,
       "maxLineLength": 99816,
@@ -1747,7 +1747,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\pl-PL-Cg91CTIZ.js",
+      "path": "src/webview/assets/pl-PL-Cg91CTIZ.js",
       "byteSize": 100802,
       "lineCount": 3,
       "maxLineLength": 98816,
@@ -1755,7 +1755,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\pl-PL-Cg91CTIZ.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/pl-PL-Cg91CTIZ.js",
       "byteSize": 100873,
       "lineCount": 6,
       "maxLineLength": 98810,
@@ -1763,7 +1763,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\hy-AM-Dzc2KYlW.js",
+      "path": "src/webview/assets/hy-AM-Dzc2KYlW.js",
       "byteSize": 128524,
       "lineCount": 3,
       "maxLineLength": 98652,
@@ -1771,7 +1771,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\hy-AM-Dzc2KYlW.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/hy-AM-Dzc2KYlW.js",
       "byteSize": 128595,
       "lineCount": 6,
       "maxLineLength": 98646,
@@ -1779,7 +1779,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\sq-AL-CVjHFe3t.js",
+      "path": "src/webview/assets/sq-AL-CVjHFe3t.js",
       "byteSize": 100762,
       "lineCount": 3,
       "maxLineLength": 98410,
@@ -1787,7 +1787,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\sq-AL-CVjHFe3t.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/sq-AL-CVjHFe3t.js",
       "byteSize": 100833,
       "lineCount": 6,
       "maxLineLength": 98404,
@@ -1795,7 +1795,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\mk-MK-n6p_7YZJ.js",
+      "path": "src/webview/assets/mk-MK-n6p_7YZJ.js",
       "byteSize": 126450,
       "lineCount": 3,
       "maxLineLength": 97794,
@@ -1803,7 +1803,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\mk-MK-n6p_7YZJ.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/mk-MK-n6p_7YZJ.js",
       "byteSize": 126521,
       "lineCount": 6,
       "maxLineLength": 97788,
@@ -1811,7 +1811,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\hu-HU-CFP2Bg0x.js",
+      "path": "src/webview/assets/hu-HU-CFP2Bg0x.js",
       "byteSize": 101693,
       "lineCount": 3,
       "maxLineLength": 97609,
@@ -1819,7 +1819,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\hu-HU-CFP2Bg0x.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/hu-HU-CFP2Bg0x.js",
       "byteSize": 101764,
       "lineCount": 6,
       "maxLineLength": 97603,
@@ -1827,7 +1827,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\sr-RS-Wd1ub07i.js",
+      "path": "src/webview/assets/sr-RS-Wd1ub07i.js",
       "byteSize": 124501,
       "lineCount": 3,
       "maxLineLength": 96996,
@@ -1835,7 +1835,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\sr-RS-Wd1ub07i.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/sr-RS-Wd1ub07i.js",
       "byteSize": 124572,
       "lineCount": 6,
       "maxLineLength": 96990,
@@ -1843,7 +1843,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\bn-BD-2tg82bxW.js",
+      "path": "src/webview/assets/bn-BD-2tg82bxW.js",
       "byteSize": 152190,
       "lineCount": 3,
       "maxLineLength": 96351,
@@ -1851,7 +1851,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\bn-BD-2tg82bxW.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/bn-BD-2tg82bxW.js",
       "byteSize": 152261,
       "lineCount": 6,
       "maxLineLength": 96345,
@@ -1859,7 +1859,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\vi-VN-Bw4Iax46.js",
+      "path": "src/webview/assets/vi-VN-Bw4Iax46.js",
       "byteSize": 107387,
       "lineCount": 3,
       "maxLineLength": 96026,
@@ -1867,7 +1867,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\vi-VN-Bw4Iax46.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/vi-VN-Bw4Iax46.js",
       "byteSize": 107458,
       "lineCount": 6,
       "maxLineLength": 96020,
@@ -1875,7 +1875,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\kk-sW0PbZiX.js",
+      "path": "src/webview/assets/kk-sW0PbZiX.js",
       "byteSize": 124317,
       "lineCount": 3,
       "maxLineLength": 95988,
@@ -1883,7 +1883,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\kk-sW0PbZiX.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/kk-sW0PbZiX.js",
       "byteSize": 124385,
       "lineCount": 6,
       "maxLineLength": 95982,
@@ -1891,7 +1891,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\mn-B9h66lOl.js",
+      "path": "src/webview/assets/mn-B9h66lOl.js",
       "byteSize": 122009,
       "lineCount": 3,
       "maxLineLength": 95153,
@@ -1899,7 +1899,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\mn-B9h66lOl.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/mn-B9h66lOl.js",
       "byteSize": 122077,
       "lineCount": 6,
       "maxLineLength": 95147,
@@ -1907,7 +1907,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\ar-CAgWeId9.js",
+      "path": "src/webview/assets/ar-CAgWeId9.js",
       "byteSize": 120273,
       "lineCount": 3,
       "maxLineLength": 95058,
@@ -1915,7 +1915,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\ar-CAgWeId9.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/ar-CAgWeId9.js",
       "byteSize": 120341,
       "lineCount": 6,
       "maxLineLength": 95052,
@@ -1923,7 +1923,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\ko-KR-FlTcokk0.js",
+      "path": "src/webview/assets/ko-KR-FlTcokk0.js",
       "byteSize": 122311,
       "lineCount": 3,
       "maxLineLength": 94908,
@@ -1931,7 +1931,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\ko-KR-FlTcokk0.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/ko-KR-FlTcokk0.js",
       "byteSize": 122382,
       "lineCount": 6,
       "maxLineLength": 94902,
@@ -1939,7 +1939,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\ur-DLcUVgnr.js",
+      "path": "src/webview/assets/ur-DLcUVgnr.js",
       "byteSize": 118830,
       "lineCount": 3,
       "maxLineLength": 94245,
@@ -1947,7 +1947,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\ur-DLcUVgnr.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/ur-DLcUVgnr.js",
       "byteSize": 118898,
       "lineCount": 6,
       "maxLineLength": 94239,
@@ -1955,7 +1955,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\mr-IN-DBcNVzr7.js",
+      "path": "src/webview/assets/mr-IN-DBcNVzr7.js",
       "byteSize": 144574,
       "lineCount": 3,
       "maxLineLength": 93785,
@@ -1963,7 +1963,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\mr-IN-DBcNVzr7.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/mr-IN-DBcNVzr7.js",
       "byteSize": 144645,
       "lineCount": 6,
       "maxLineLength": 93779,
@@ -1971,7 +1971,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\pa-nK-8pqDR.js",
+      "path": "src/webview/assets/pa-nK-8pqDR.js",
       "byteSize": 140764,
       "lineCount": 3,
       "maxLineLength": 93096,
@@ -1979,7 +1979,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\pa-nK-8pqDR.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/pa-nK-8pqDR.js",
       "byteSize": 140832,
       "lineCount": 6,
       "maxLineLength": 93090,
@@ -1987,7 +1987,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\th-TH-D5ooVEsu.js",
+      "path": "src/webview/assets/th-TH-D5ooVEsu.js",
       "byteSize": 143685,
       "lineCount": 3,
       "maxLineLength": 91614,
@@ -1995,7 +1995,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\th-TH-D5ooVEsu.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/th-TH-D5ooVEsu.js",
       "byteSize": 143756,
       "lineCount": 6,
       "maxLineLength": 91608,
@@ -2003,7 +2003,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\te-IN-BKbRSTXE.js",
+      "path": "src/webview/assets/te-IN-BKbRSTXE.js",
       "byteSize": 142116,
       "lineCount": 3,
       "maxLineLength": 89712,
@@ -2011,7 +2011,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\te-IN-BKbRSTXE.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/te-IN-BKbRSTXE.js",
       "byteSize": 142187,
       "lineCount": 6,
       "maxLineLength": 89706,
@@ -2019,7 +2019,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\ja-JP-DVHidDTb.js",
+      "path": "src/webview/assets/ja-JP-DVHidDTb.js",
       "byteSize": 120119,
       "lineCount": 3,
       "maxLineLength": 86754,
@@ -2027,7 +2027,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\ja-JP-DVHidDTb.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/ja-JP-DVHidDTb.js",
       "byteSize": 120190,
       "lineCount": 6,
       "maxLineLength": 86748,
@@ -2035,7 +2035,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\am-BEJQWIjr.js",
+      "path": "src/webview/assets/am-BEJQWIjr.js",
       "byteSize": 117744,
       "lineCount": 3,
       "maxLineLength": 84736,
@@ -2043,7 +2043,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\am-BEJQWIjr.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/am-BEJQWIjr.js",
       "byteSize": 117812,
       "lineCount": 6,
       "maxLineLength": 84730,
@@ -2051,7 +2051,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\gu-IN-BqR45a-h.js",
+      "path": "src/webview/assets/gu-IN-BqR45a-h.js",
       "byteSize": 157143,
       "lineCount": 4,
       "maxLineLength": 82940,
@@ -2059,7 +2059,7 @@
       "opaque": true
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\gu-IN-BqR45a-h.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/gu-IN-BqR45a-h.js",
       "byteSize": 157215,
       "lineCount": 7,
       "maxLineLength": 82919,
@@ -2067,7 +2067,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\treemap-KMMF4GRG-CK1q9nlx.js",
+      "path": "src/webview/assets/treemap-KMMF4GRG-CK1q9nlx.js",
       "byteSize": 330125,
       "lineCount": 130,
       "maxLineLength": 76171,
@@ -2075,7 +2075,7 @@
       "opaque": true
     },
     {
-      "path": "src\\webview\\assets\\worker-CJ6-3-tZ.js",
+      "path": "src/webview/assets/worker-CJ6-3-tZ.js",
       "byteSize": 189859,
       "lineCount": 155,
       "maxLineLength": 44051,
@@ -2083,7 +2083,7 @@
       "opaque": false
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\treemap-KMMF4GRG-CK1q9nlx.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/treemap-KMMF4GRG-CK1q9nlx.js",
       "byteSize": 428424,
       "lineCount": 10201,
       "maxLineLength": 11984,
@@ -2091,7 +2091,7 @@
       "opaque": false
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\worker-CJ6-3-tZ.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/worker-CJ6-3-tZ.js",
       "byteSize": 233767,
       "lineCount": 6063,
       "maxLineLength": 10068,
@@ -2099,7 +2099,7 @@
       "opaque": false
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\architectureDiagram-VXUJARFQ-Bf9AGjdF.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/architectureDiagram-VXUJARFQ-Bf9AGjdF.js",
       "byteSize": 241091,
       "lineCount": 7083,
       "maxLineLength": 5488,
@@ -2107,7 +2107,7 @@
       "opaque": false
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\cytoscape.esm-DtBltrT8.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/cytoscape.esm-DtBltrT8.js",
       "byteSize": 594523,
       "lineCount": 21451,
       "maxLineLength": 5210,
@@ -2115,7 +2115,7 @@
       "opaque": false
     },
     {
-      "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\.vite\\build\\worker.js",
+      "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/.vite/build/worker.js",
       "byteSize": 1074106,
       "lineCount": 32235,
       "maxLineLength": 4790,

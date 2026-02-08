@@ -32,3 +32,10 @@ A route can be considered migrated only when all are true:
 2. Animation token/timeline parity checks are green.
 3. Interaction behavior parity checks are green.
 4. No unresolved high-severity regressions in the route.
+
+## Route Inventory and Tracking
+
+- `docs/parity/routes.json` is the canonical route inventory for migration scope.
+- Track per-route migration state in `docs/rewrite/route-migration-status.md`.
+- Route status must be one of: `mirror`, `in-progress`, `candidate`, `parity-green`.
+- Promote `candidate` -> `parity-green` only after gate evidence links are recorded (test output, screenshots, and parity report references).

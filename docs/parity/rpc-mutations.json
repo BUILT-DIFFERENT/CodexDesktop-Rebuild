@@ -1,6 +1,6 @@
 {
-  "extractedAt": "2026-02-08T02:29:51.253Z",
-  "source": "src\\webview\\assets\\index-CgwAo6pj.js",
+  "extractedAt": "2026-02-08T07:23:28.245Z",
+  "source": "src/webview/assets/index-CgwAo6pj.js",
   "methods": [
     "add-workspace-root-option",
     "apply-patch",

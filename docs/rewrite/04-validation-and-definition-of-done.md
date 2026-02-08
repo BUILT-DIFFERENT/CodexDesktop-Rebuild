@@ -10,12 +10,17 @@ Define deterministic checks for host, worker, source-baseline, and UI/motion par
 - `scripts/parity/check-host-coverage.js`
 - `scripts/parity/check-worker-coverage.js`
 - `scripts/parity/check-ui-motion-parity.js`
+- `scripts/parity/check-architecture-contracts.js`
 
 ## Command Set
 
 - `pnpm run parity:extract`
-- `pnpm run parity:runtime -- --log logs`
+- `pnpm run parity:runtime`
 - `pnpm run parity:check`
+- `pnpm run parity:check:architecture`
+- `pnpm run test:ui`
+- `pnpm run test:tauri-driver`
+- `pnpm run tauri:check`
 
 ## Expected Gate State
 
@@ -23,6 +28,7 @@ Define deterministic checks for host, worker, source-baseline, and UI/motion par
 - `parity:check:host`: pass (full query/mutation dispatch coverage).
 - `parity:check:worker`: pass (full git worker method coverage).
 - `parity:check:ui-motion`: pass (no animation baseline drift).
+- `parity:check:architecture`: pass (architecture specs mapped to parity artifacts).
 
 ## E2E and Integration
 
@@ -36,6 +42,18 @@ Define deterministic checks for host, worker, source-baseline, and UI/motion par
   - git operations
   - terminal lifecycle
   - deep links/window typing
+
+## Runtime Dataset Requirements
+
+- `parity:runtime` input NDJSON must come from a run that exercises all critical flows listed in this plan.
+- Store generated flow outputs under `docs/parity/critical-flows/*.md` and keep them current with the latest parity run.
+- A parity report is stale when runtime artifacts are older than the latest host, worker, terminal, or bridge contract change in the same branch.
+
+## Delta Approval Record
+
+- Approved low-risk deltas must be recorded in `docs/parity/approved-deltas.md` before merge.
+- Every delta record must include: baseline behavior, rewrite behavior, risk classification, approver, and mitigation/rollback note.
+- Unrecorded behavior differences are treated as parity failures.
 
 ## Definition of Done
 

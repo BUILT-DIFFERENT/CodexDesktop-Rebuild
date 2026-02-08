@@ -1,5 +1,5 @@
 {
-  "extractedAt": "2026-02-08T02:29:51.255Z",
+  "extractedAt": "2026-02-08T07:23:28.248Z",
   "coverage": {
     "total": 6,
     "available": 6,
@@ -16,16 +16,16 @@
       "preferredClass": "original",
       "sourceClass": "opaque",
       "selectedSourceClass": "original",
-      "selectedPath": "src\\webview\\assets\\index-CgwAo6pj.js",
+      "selectedPath": "src/webview/assets/index-CgwAo6pj.js",
       "extractionStatus": "opaque",
       "candidates": [
         {
-          "path": "src\\webview\\assets\\index-CgwAo6pj.js",
+          "path": "src/webview/assets/index-CgwAo6pj.js",
           "sourceClass": "original",
           "exists": true
         },
         {
-          "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\index-CgwAo6pj.js",
+          "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/index-CgwAo6pj.js",
           "sourceClass": "unminify-safe",
           "exists": false
         }
@@ -42,16 +42,16 @@
       "preferredClass": "original",
       "sourceClass": "opaque",
       "selectedSourceClass": "original",
-      "selectedPath": "src\\webview\\assets\\index-DYqVWCHk.css",
+      "selectedPath": "src/webview/assets/index-DYqVWCHk.css",
       "extractionStatus": "opaque",
       "candidates": [
         {
-          "path": "src\\webview\\assets\\index-DYqVWCHk.css",
+          "path": "src/webview/assets/index-DYqVWCHk.css",
           "sourceClass": "original",
           "exists": true
         },
         {
-          "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\index-DYqVWCHk.css",
+          "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/index-DYqVWCHk.css",
           "sourceClass": "unminify-safe",
           "exists": false
         }
@@ -68,16 +68,16 @@
       "preferredClass": "original",
       "sourceClass": "opaque",
       "selectedSourceClass": "original",
-      "selectedPath": "src\\webview\\assets\\pdf.worker.min-qwK7q_zL.mjs",
+      "selectedPath": "src/webview/assets/pdf.worker.min-qwK7q_zL.mjs",
       "extractionStatus": "opaque",
       "candidates": [
         {
-          "path": "src\\webview\\assets\\pdf.worker.min-qwK7q_zL.mjs",
+          "path": "src/webview/assets/pdf.worker.min-qwK7q_zL.mjs",
           "sourceClass": "original",
           "exists": true
         },
         {
-          "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\webview\\assets\\pdf.worker.min-qwK7q_zL.mjs",
+          "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/webview/assets/pdf.worker.min-qwK7q_zL.mjs",
           "sourceClass": "unminify-safe",
           "exists": false
         }
@@ -94,16 +94,16 @@
       "preferredClass": "unminify-safe",
       "sourceClass": "opaque",
       "selectedSourceClass": "unminify-safe",
-      "selectedPath": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\.vite\\build\\main-CQwPb0Th.js",
+      "selectedPath": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/.vite/build/main-CQwPb0Th.js",
       "extractionStatus": "opaque",
       "candidates": [
         {
-          "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\.vite\\build\\main-CQwPb0Th.js",
+          "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/.vite/build/main-CQwPb0Th.js",
           "sourceClass": "unminify-safe",
           "exists": true
         },
         {
-          "path": "src\\.vite\\build\\main-CQwPb0Th.js",
+          "path": "src/.vite/build/main-CQwPb0Th.js",
           "sourceClass": "original",
           "exists": true
         }
@@ -120,16 +120,16 @@
       "preferredClass": "unminify-safe",
       "sourceClass": "unminify-safe",
       "selectedSourceClass": "unminify-safe",
-      "selectedPath": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\.vite\\build\\worker.js",
+      "selectedPath": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/.vite/build/worker.js",
       "extractionStatus": "ok",
       "candidates": [
         {
-          "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\.vite\\build\\worker.js",
+          "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/.vite/build/worker.js",
           "sourceClass": "unminify-safe",
           "exists": true
         },
         {
-          "path": "src\\.vite\\build\\worker.js",
+          "path": "src/.vite/build/worker.js",
           "sourceClass": "original",
           "exists": true
         }
@@ -146,16 +146,16 @@
       "preferredClass": "unminify-safe",
       "sourceClass": "unminify-safe",
       "selectedSourceClass": "unminify-safe",
-      "selectedPath": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\.vite\\build\\preload.js",
+      "selectedPath": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/.vite/build/preload.js",
       "extractionStatus": "ok",
       "candidates": [
         {
-          "path": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\.vite\\build\\preload.js",
+          "path": "tmp/codex-wakaru/unminify-safe/third_party/CodexDesktop-Rebuild/src/.vite/build/preload.js",
           "sourceClass": "unminify-safe",
           "exists": true
         },
         {
-          "path": "src\\.vite\\build\\preload.js",
+          "path": "src/.vite/build/preload.js",
           "sourceClass": "original",
           "exists": true
         }

@@ -41,3 +41,6 @@ Complete Rust/Tauri host behavior parity with Electron by wiring the app-server 
 
 - Git worker methods must return stable, parseable envelopes.
 - Remove placeholder responses that mark parity methods as unimplemented.
+
+## Parity Artifacts
+- `docs/parity/worker-git-methods.json`

@@ -48,12 +48,14 @@ Last updated: 2026-02-08
 - Phase A: serve existing webview assets unchanged from `src/webview`.
 - Phase B: progressively replace internals while preserving rendered parity.
 - Baseline artifacts generated from large bundles and CSS.
+- Track route migration status and gate evidence in `docs/rewrite/route-migration-status.md`.
 
 ### 5) Verification/Migration/Cutover
 
 - Keep Electron debug/audit harness for baseline capture.
 - Add parity extraction + runtime schema scripts.
 - Gate rollout by parity artifact deltas and scripted flow checks.
+- Record approved low-risk deltas in `docs/parity/approved-deltas.md`.
 
 ## Current Implementation Status
 
@@ -91,6 +93,8 @@ Last updated: 2026-02-08
   - `docs/rewrite/03-renderer-ui-animation-parity.md`
   - `docs/rewrite/04-validation-and-definition-of-done.md`
   - `docs/rewrite/05-cutover-and-risk-controls.md`
+  - `docs/rewrite/route-migration-status.md`
+  - `docs/parity/approved-deltas.md`
 
 ### In Progress
 
