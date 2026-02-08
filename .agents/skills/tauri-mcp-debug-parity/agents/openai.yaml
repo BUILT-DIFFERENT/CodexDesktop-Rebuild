@@ -1,0 +1,4 @@
+interface:
+  display_name: "Tauri MCP Debug Parity"
+  short_description: "Debug Tauri apps and verify UI parity"
+  default_prompt: "Use $tauri-mcp-debug-parity to debug this Tauri workflow and compare behavior against the parity reference app."

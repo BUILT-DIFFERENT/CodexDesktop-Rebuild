@@ -1,0 +1,33 @@
+{
+  "extractedAt": "2026-02-08T02:29:51.253Z",
+  "source": "tmp\\codex-wakaru\\unminify-safe\\third_party\\CodexDesktop-Rebuild\\src\\.vite\\build\\worker.js",
+  "methods": [
+    "apply-changes",
+    "base-branch",
+    "branch-ahead-count",
+    "branch-changes",
+    "cat-file",
+    "codex-worktree",
+    "commit",
+    "config-value",
+    "create-worktree",
+    "current-branch",
+    "default-branch",
+    "delete-worktree",
+    "git-init-repo",
+    "index-info",
+    "invalidate-stable-metadata",
+    "list-worktrees",
+    "recent-branches",
+    "restore-worktree",
+    "set-config-value",
+    "stable-metadata",
+    "staged-and-unstaged-changes",
+    "status-summary",
+    "submodule-paths",
+    "tracked-uncommitted-changes",
+    "untracked-changes",
+    "upstream-branch",
+    "worktree-snapshot-ref"
+  ]
+}

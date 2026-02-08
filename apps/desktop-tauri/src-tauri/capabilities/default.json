@@ -1,0 +1,60 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Default permissions for Codex Tauri rewrite.",
+  "windows": [
+    "main"
+  ],
+  "permissions": [
+    "core:default",
+    "shell:default",
+    {
+      "identifier": "shell:allow-execute",
+      "allow": [
+        { "name": "shell-sh", "cmd": "sh", "args": true },
+        { "name": "shell-bash", "cmd": "bash", "args": true },
+        { "name": "shell-zsh", "cmd": "zsh", "args": true },
+        { "name": "shell-fish", "cmd": "fish", "args": true },
+        { "name": "shell-cmd", "cmd": "cmd.exe", "args": true },
+        { "name": "shell-powershell", "cmd": "powershell.exe", "args": true },
+        { "name": "shell-pwsh", "cmd": "pwsh.exe", "args": true }
+      ]
+    },
+    {
+      "identifier": "shell:allow-spawn",
+      "allow": [
+        { "name": "shell-sh", "cmd": "sh", "args": true },
+        { "name": "shell-bash", "cmd": "bash", "args": true },
+        { "name": "shell-zsh", "cmd": "zsh", "args": true },
+        { "name": "shell-fish", "cmd": "fish", "args": true },
+        { "name": "shell-cmd", "cmd": "cmd.exe", "args": true },
+        { "name": "shell-powershell", "cmd": "powershell.exe", "args": true },
+        { "name": "shell-pwsh", "cmd": "pwsh.exe", "args": true }
+      ]
+    },
+    {
+      "identifier": "shell:allow-kill",
+      "allow": [
+        { "name": "shell-sh", "cmd": "sh", "args": true },
+        { "name": "shell-bash", "cmd": "bash", "args": true },
+        { "name": "shell-zsh", "cmd": "zsh", "args": true },
+        { "name": "shell-fish", "cmd": "fish", "args": true },
+        { "name": "shell-cmd", "cmd": "cmd.exe", "args": true },
+        { "name": "shell-powershell", "cmd": "powershell.exe", "args": true },
+        { "name": "shell-pwsh", "cmd": "pwsh.exe", "args": true }
+      ]
+    },
+    {
+      "identifier": "shell:allow-stdin-write",
+      "allow": [
+        { "name": "shell-sh", "cmd": "sh", "args": true },
+        { "name": "shell-bash", "cmd": "bash", "args": true },
+        { "name": "shell-zsh", "cmd": "zsh", "args": true },
+        { "name": "shell-fish", "cmd": "fish", "args": true },
+        { "name": "shell-cmd", "cmd": "cmd.exe", "args": true },
+        { "name": "shell-powershell", "cmd": "powershell.exe", "args": true },
+        { "name": "shell-pwsh", "cmd": "pwsh.exe", "args": true }
+      ]
+    }
+  ]
+}
