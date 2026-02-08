@@ -7,7 +7,7 @@ tags: error, flatten, forms, user-experience
 
 ## Use flatten() for Form Error Display
 
-`ZodError.issues` is an array that requires manual processing to map errors to form fields. `ZodError.flatten()` returns an object with `fieldErrors` keyed by field name, ready for form libraries and UI display.
+`ZodError.issues` is an array that requires manual processing to map errors to form fields. `result.error.flatten()` (from `formSchema.safeParse(...)`) returns an object with `fieldErrors` keyed by **top-level** field names, ready for common form display patterns.
 
 **Incorrect (manual issue processing):**
 
@@ -62,14 +62,14 @@ if (!result.success) {
   const { formErrors, fieldErrors } = result.error.flatten()
 
   // formErrors: string[] - top-level errors (from .refine on the object)
-  // fieldErrors: { [key]: string[] } - errors by field
+  // fieldErrors: { [key]: string[] } - errors by top-level field
 
   // Ready for form display
   console.log(fieldErrors)
   // {
   //   email: ['Invalid email'],
   //   password: ['Password too short'],
-  //   'profile.name': ['Name required']
+  //   profile: ['Name required']
   // }
 }
 ```
@@ -103,7 +103,7 @@ const flattened = result.error.flatten((issue) => ({
 // }
 ```
 
-**For deeply nested objects, use format():**
+`result.error.flatten()` does not produce dot-joined keys like `'profile.name'`. For deeply nested structures, use `result.error.format()`:
 
 ```typescript
 const result = formSchema.safeParse(data)

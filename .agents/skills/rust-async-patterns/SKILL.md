@@ -458,15 +458,34 @@ struct PooledConnection<'a> {
     _permit: tokio::sync::SemaphorePermit<'a>,
 }
 
+impl PooledConnection<'_> {
+    async fn release(&mut self) {
+        if let Some(conn) = self.conn.take() {
+            self.pool.connections.lock().await.push(conn);
+        }
+    }
+}
+
 impl Drop for PooledConnection<'_> {
     fn drop(&mut self) {
         if let Some(conn) = self.conn.take() {
-            let pool = self.pool;
-            tokio::spawn(async move {
-                pool.connections.lock().await.push(conn);
-            });
+            if tokio::runtime::Handle::try_current().is_ok() {
+                if let Ok(mut connections) = self.pool.connections.try_lock() {
+                    connections.push(conn);
+                } else {
+                    eprintln!("PooledConnection dropped without release(); call release().await explicitly");
+                }
+            } else {
+                eprintln!("PooledConnection dropped outside runtime; call release().await explicitly");
+            }
         }
     }
+}
+
+async fn do_work(pool: &Pool) {
+    let mut conn = pool.acquire().await;
+    // ... use conn ...
+    conn.release().await;
 }
 ```
 

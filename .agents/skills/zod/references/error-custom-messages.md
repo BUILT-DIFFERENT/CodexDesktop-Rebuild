@@ -9,6 +9,8 @@ tags: error, messages, user-experience, validation
 
 Zod's default error messages are technical and confusing for end users. Provide custom messages that are clear, specific, and actionable. This dramatically improves user experience when validation fails.
 
+This reference targets **Zod v3** APIs. If you are on Zod v4, use `z.config({ customError: ... })` for global custom errors instead of `z.setErrorMap(...)`.
+
 **Incorrect (default error messages):**
 
 ```typescript
@@ -65,9 +67,6 @@ const schema = z.string({
 
   // When field is wrong type (e.g., number instead of string)
   invalid_type_error: 'This field must be text',
-
-  // Fallback for any other error
-  message: 'Invalid value',
 })
 .min(1, 'Cannot be empty')  // When length < 1
 .max(100, 'Too long')  // When length > 100
@@ -103,6 +102,19 @@ z.setErrorMap(customErrorMap)
 
 // Or per-schema
 schema.parse(data, { errorMap: customErrorMap })
+```
+
+**Zod v4 equivalent for global custom messages:**
+
+```typescript
+z.config({
+  customError: (issue) => {
+    if (issue.code === 'invalid_type') {
+      return 'Must be text'
+    }
+    return undefined // fall back to built-in/default message
+  },
+})
 ```
 
 **Good error message principles:**

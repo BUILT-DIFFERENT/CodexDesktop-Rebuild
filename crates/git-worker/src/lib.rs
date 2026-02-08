@@ -71,8 +71,9 @@ impl GitWorkerService {
                 Ok(json!({ "count": count }))
             }
             "default-branch" => {
-                let output = run_git(cwd, &["symbolic-ref", "refs/remotes/origin/HEAD"]).await?;
-                let branch = output.trim().rsplit('/').next().unwrap_or("main");
+                let branch = default_branch(cwd)
+                    .await
+                    .unwrap_or_else(|_| "main".to_string());
                 Ok(json!({ "branch": branch }))
             }
             "base-branch" => {
@@ -81,9 +82,14 @@ impl GitWorkerService {
                     .get("baseBranch")
                     .or_else(|| request.params.get("base_branch"))
                     .and_then(Value::as_str)
-                    .map(ToString::to_string)
-                    .or_else(|| default_branch(cwd).ok())
-                    .unwrap_or_else(|| "main".to_string());
+                    .map(ToString::to_string);
+                let base = if let Some(base) = base {
+                    base
+                } else {
+                    default_branch(cwd)
+                        .await
+                        .unwrap_or_else(|_| "main".to_string())
+                };
                 Ok(json!({ "branch": base }))
             }
             "recent-branches" => {
@@ -121,9 +127,14 @@ impl GitWorkerService {
                     .get("baseBranch")
                     .or_else(|| request.params.get("base_branch"))
                     .and_then(Value::as_str)
-                    .map(ToString::to_string)
-                    .or_else(|| default_branch(cwd).ok())
-                    .unwrap_or_else(|| "main".to_string());
+                    .map(ToString::to_string);
+                let base = if let Some(base) = base {
+                    base
+                } else {
+                    default_branch(cwd)
+                        .await
+                        .unwrap_or_else(|_| "main".to_string())
+                };
                 let range = format!("{base}...HEAD");
                 let output = run_git(cwd, &["diff", "--name-status", &range]).await?;
                 let items: Vec<Value> = output
@@ -233,6 +244,9 @@ impl GitWorkerService {
                     .get("key")
                     .and_then(Value::as_str)
                     .ok_or_else(|| anyhow!("missing config key"))?;
+                if is_disallowed_git_config_key(key) {
+                    return Err(anyhow!("disallowed git config key '{}'", key));
+                }
                 let value = request
                     .params
                     .get("value")
@@ -463,22 +477,31 @@ async fn branch_ahead_count(cwd: &str) -> Result<i64> {
     Ok(count)
 }
 
-fn default_branch(cwd: &str) -> Result<String> {
-    let output = std::process::Command::new("git")
-        .args(["symbolic-ref", "refs/remotes/origin/HEAD"])
-        .current_dir(cwd)
-        .output()?;
-    if output.status.success() {
-        let branch = String::from_utf8_lossy(&output.stdout)
-            .trim()
-            .rsplit('/')
-            .next()
-            .unwrap_or("main")
-            .to_string();
-        Ok(branch)
-    } else {
-        Ok("main".to_string())
-    }
+async fn default_branch(cwd: &str) -> Result<String> {
+    let output = run_git_allow_failure(cwd, &["symbolic-ref", "refs/remotes/origin/HEAD"]).await;
+    let branch = output
+        .as_deref()
+        .unwrap_or("refs/remotes/origin/main")
+        .trim()
+        .rsplit('/')
+        .next()
+        .unwrap_or("main")
+        .to_string();
+    Ok(branch)
+}
+
+fn is_disallowed_git_config_key(key: &str) -> bool {
+    let normalized = key.trim().to_ascii_lowercase();
+    normalized.is_empty()
+        || normalized.chars().any(char::is_whitespace)
+        || normalized == "core.hookspath"
+        || normalized == "core.sshcommand"
+        || normalized == "core.gitproxy"
+        || normalized == "credential.helper"
+        || normalized.starts_with("credential.helper.")
+        || normalized.starts_with("alias.")
+        || normalized.starts_with("include.")
+        || normalized.starts_with("includeif.")
 }
 
 async fn status_lines(cwd: &str) -> Result<Vec<String>> {

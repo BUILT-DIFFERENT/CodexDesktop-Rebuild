@@ -1,7 +1,7 @@
 (() => {
   const WINDOW_TYPE = "__WINDOW_TYPE__";
-  const BUILD_FLAVOR = "__BUILD_FLAVOR__";
-  const APP_SESSION_ID = "__APP_SESSION_ID__";
+  const flavor = __BUILD_FLAVOR__;
+  const session = __APP_SESSION_ID__;
 
   const workerSubscriptions = new Map();
   const workerEventUnsubscribers = new Map();
@@ -22,17 +22,35 @@
   }
 
   async function ensureAppMessageSubscription() {
-    if (appMessageUnsubscribe) {
+    if (!appMessageUnsubscribe) {
+      const { listen } = getTauriEvent();
+      const listenPromise = listen("codex_desktop:message-for-view", (event) => {
+        window.dispatchEvent(
+          new MessageEvent("message", {
+            data: event.payload,
+          }),
+        );
+      })
+        .then((unlisten) => {
+          if (appMessageUnsubscribe === listenPromise) {
+            appMessageUnsubscribe = unlisten;
+          } else {
+            void unlisten();
+          }
+          return unlisten;
+        })
+        .catch((error) => {
+          if (appMessageUnsubscribe === listenPromise) {
+            appMessageUnsubscribe = null;
+          }
+          throw error;
+        });
+      appMessageUnsubscribe = listenPromise;
+    }
+    if (typeof appMessageUnsubscribe === "function") {
       return;
     }
-    const { listen } = getTauriEvent();
-    appMessageUnsubscribe = await listen("codex_desktop:message-for-view", (event) => {
-      window.dispatchEvent(
-        new MessageEvent("message", {
-          data: event.payload,
-        }),
-      );
-    });
+    await appMessageUnsubscribe;
   }
 
   const electronBridge = {
@@ -67,26 +85,45 @@
       callbackSet.add(callback);
 
       const maybeSubscribe = async () => {
-        if (workerEventUnsubscribers.has(workerId)) {
+        const existing = workerEventUnsubscribers.get(workerId);
+        if (existing) {
+          await Promise.resolve(existing);
           return;
         }
         const { listen } = getTauriEvent();
-        const unlisten = await listen(`codex_desktop:worker:${workerId}:for-view`, (event) => {
-          const handlers = workerSubscriptions.get(workerId);
-          if (!handlers) {
+        const listenPromise = listen(`codex_desktop:worker:${workerId}:for-view`, (event) => {
+          const callbacks = workerSubscriptions.get(workerId);
+          if (!callbacks) {
             return;
           }
-          handlers.forEach((handler) => {
+          callbacks.forEach((handler) => {
             try {
               handler(event.payload);
             } catch (error) {
               console.error("[electronBridgeCompat] worker callback failed", error);
             }
+          })
+        })
+          .then((unlisten) => {
+            if (workerEventUnsubscribers.get(workerId) === listenPromise) {
+              workerEventUnsubscribers.set(workerId, unlisten);
+            } else {
+              void unlisten();
+            }
+            return unlisten;
+          })
+          .catch((error) => {
+            if (workerEventUnsubscribers.get(workerId) === listenPromise) {
+              workerEventUnsubscribers.delete(workerId);
+            }
+            throw error;
           });
-        });
-        workerEventUnsubscribers.set(workerId, unlisten);
+        workerEventUnsubscribers.set(workerId, listenPromise);
+        await listenPromise;
       };
-      void maybeSubscribe();
+      void maybeSubscribe().catch((error) => {
+        console.error("[electronBridgeCompat] failed to subscribe worker events", error);
+      });
 
       return () => {
         const handlers = workerSubscriptions.get(workerId);
@@ -98,10 +135,19 @@
           return;
         }
         workerSubscriptions.delete(workerId);
-        const unlisten = workerEventUnsubscribers.get(workerId);
-        if (unlisten) {
-          void unlisten();
+        const unlistenEntry = workerEventUnsubscribers.get(workerId);
+        if (unlistenEntry) {
           workerEventUnsubscribers.delete(workerId);
+          void Promise.resolve(unlistenEntry)
+            .then((unlisten) => {
+              if (typeof unlisten === "function") {
+                return unlisten();
+              }
+              return undefined;
+            })
+            .catch((error) => {
+              console.error("[electronBridgeCompat] failed to unsubscribe worker events", error);
+            });
         }
       };
     },
@@ -112,10 +158,10 @@
       await getTauriCore().invoke("bridge_trigger_sentry_test");
     },
     getSentryInitOptions: () => ({
-      codexAppSessionId: APP_SESSION_ID,
+      codexAppSessionId: session,
     }),
-    getAppSessionId: () => APP_SESSION_ID,
-    getBuildFlavor: () => BUILD_FLAVOR,
+    getAppSessionId: () => session,
+    getBuildFlavor: () => flavor,
   };
 
   window.codexWindowType = WINDOW_TYPE;

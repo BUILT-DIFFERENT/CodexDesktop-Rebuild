@@ -8,6 +8,8 @@ use std::sync::{Arc, Mutex as StdMutex};
 use tokio::sync::Mutex;
 use uuid::Uuid;
 
+const MAX_OUTPUT_BYTES: usize = 1_048_576;
+
 struct RunningSession {
     meta: TerminalSession,
     child: Box<dyn portable_pty::Child + Send + Sync>,
@@ -63,6 +65,20 @@ impl TerminalManager {
                     Ok(0) => break,
                     Ok(count) => {
                         if let Ok(mut data) = output_clone.lock() {
+                            if count >= MAX_OUTPUT_BYTES {
+                                data.clear();
+                                data.extend_from_slice(&chunk[count - MAX_OUTPUT_BYTES..count]);
+                                continue;
+                            }
+                            let overflow = data
+                                .len()
+                                .saturating_add(count)
+                                .saturating_sub(MAX_OUTPUT_BYTES);
+                            if overflow > 0 {
+                                let current_len = data.len();
+                                let drop_count = overflow.min(current_len);
+                                data.drain(..drop_count);
+                            }
                             data.extend_from_slice(&chunk[..count]);
                         }
                     }

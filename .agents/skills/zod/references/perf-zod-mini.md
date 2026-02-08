@@ -1,13 +1,13 @@
 ---
 title: Use Zod Mini for Bundle-Sensitive Applications
 impact: LOW-MEDIUM
-impactDescription: Full Zod is ~17kb gzipped; Zod Mini is ~1.9kb - 85% smaller for frontend-critical bundles
+impactDescription: Full Zod is typically ≈5–13 kB gzipped; Zod Mini is ≈1.9–2.1 kB, often reducing validation bundle cost by ~64–70% in bundle-sensitive frontend builds
 tags: perf, bundle, mini, tree-shaking
 ---
 
 ## Use Zod Mini for Bundle-Sensitive Applications
 
-For frontend applications where bundle size is critical, use `@zod/mini` instead of `zod`. Zod Mini provides the same validation capabilities with a functional API that tree-shakes better, reducing bundle size by ~85%.
+For frontend applications where bundle size is critical, install `zod` and import the mini build from `zod/mini`. Zod Mini provides a functional API that tree-shakes better and can reduce validation bundle cost by roughly ~64–70%.
 
 **When to consider Zod Mini:**
 
@@ -18,11 +18,11 @@ For frontend applications where bundle size is critical, use `@zod/mini` instead
 // - Simple validation needs (no complex transforms)
 // - Tree-shaking is important
 
-// Zod: ~17kb gzipped
+// Zod full build: ≈5–13 kB gzipped (depends on usage/tree-shaking)
 import { z } from 'zod'
 
-// Zod Mini: ~1.9kb gzipped (when tree-shaken)
-import * as z from '@zod/mini'
+// Zod Mini: ≈1.9–2.1 kB gzipped (when tree-shaken)
+import * as z from 'zod/mini'
 ```
 
 **Standard Zod (method chaining):**
@@ -43,7 +43,7 @@ const result = userSchema.safeParse(data)
 **Zod Mini (functional API):**
 
 ```typescript
-import * as z from '@zod/mini'
+import * as z from 'zod/mini'
 
 // Functions are imported individually - tree-shakeable
 const userSchema = z.object({
@@ -82,9 +82,9 @@ z.safeParse(schema, data)
 // - Need full method chaining ergonomics
 // - Bundle size isn't a constraint
 
-// The 17kb isn't huge - only optimize if needed
-// Server: 17kb is negligible
-// Browser: 17kb ≈ 0.6ms additional startup on 3G
+// The full build is often still acceptable - only optimize if needed
+// Server: this size is usually negligible
+// Browser: it matters more on constrained/mobile networks
 ```
 
 **Shared schemas between packages:**
@@ -93,7 +93,7 @@ z.safeParse(schema, data)
 // shared-schemas/package.json
 {
   "dependencies": {
-    "@zod/mini": "^4.0.0"  // Mini for frontend-shared schemas
+    "zod": "^4.x"  // Install stable zod, import mini via 'zod/mini'
   }
 }
 
@@ -105,9 +105,8 @@ z.safeParse(schema, data)
 
 | Package | Gzipped Size | Use Case |
 |---------|--------------|----------|
-| `zod@3` | ~13kb | Legacy, stable |
-| `zod@4` | ~17kb | Full features |
-| `@zod/mini` | ~1.9kb | Bundle-critical |
+| `zod` (full build) | ≈5–13 kB | Full API/features |
+| `zod/mini` | ≈1.9–2.1 kB | Bundle-critical frontend paths |
 
 **When NOT to use this pattern:**
 - Server-side applications (bundle size irrelevant)

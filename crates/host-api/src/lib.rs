@@ -150,24 +150,28 @@ pub enum DeepLinkParseError {
 }
 
 pub fn parse_deep_link(raw: &str) -> Result<DeepLinkRoute, DeepLinkParseError> {
+    const SCHEME: &str = "codex://";
+    const LOCAL_PREFIX: &str = "local/";
     let lower = raw.to_ascii_lowercase();
-    if !lower.starts_with("codex://") {
+    if !lower.starts_with(SCHEME) {
         return Err(DeepLinkParseError::InvalidScheme(raw.to_string()));
     }
-    let path = raw.trim_start_matches("codex://");
-    if path.eq_ignore_ascii_case("settings") {
+    let path = &raw[SCHEME.len()..];
+    let path_lower = &lower[SCHEME.len()..];
+    if path_lower.eq_ignore_ascii_case("settings") {
         return Ok(DeepLinkRoute::Settings);
     }
-    if path.eq_ignore_ascii_case("skills") {
+    if path_lower.eq_ignore_ascii_case("skills") {
         return Ok(DeepLinkRoute::Skills);
     }
-    if path.eq_ignore_ascii_case("automations") {
+    if path_lower.eq_ignore_ascii_case("automations") {
         return Ok(DeepLinkRoute::Automations);
     }
-    if path.eq_ignore_ascii_case("threads/new") {
+    if path_lower.eq_ignore_ascii_case("threads/new") {
         return Ok(DeepLinkRoute::NewThread);
     }
-    if let Some(conversation_id) = path.strip_prefix("local/") {
+    if path_lower.starts_with(LOCAL_PREFIX) {
+        let conversation_id = &path[LOCAL_PREFIX.len()..];
         return Ok(DeepLinkRoute::LocalConversation(
             conversation_id.to_string(),
         ));

@@ -1,13 +1,13 @@
 ---
 title: Apply String Validations at Schema Definition
 impact: CRITICAL
-impactDescription: Unvalidated strings allow SQL injection, XSS, and malformed data; validating at schema level catches issues at the boundary
+impactDescription: Unvalidated strings increase malformed or dangerous input risk; schema-level validation reduces risk at the boundary but SQL injection and XSS still require parameterized queries plus output encoding/sanitization
 tags: schema, string, validation, security
 ---
 
 ## Apply String Validations at Schema Definition
 
-Plain `z.string()` accepts any string including empty strings, extremely long strings, and malicious content. Apply constraints like `min()`, `max()`, `email()`, `url()`, or `regex()` at schema definition to reject invalid data at the boundary.
+Plain `z.string()` accepts any string including empty strings, extremely long strings, and malicious content. Apply constraints like `min()`, `max()`, `email()`, `url()`, or `regex()` at schema definition to reject invalid data at the boundary. This lowers risk, but SQL injection and XSS protections still depend on parameterized queries and safe output encoding/sanitization.
 
 **Incorrect (no string validations):**
 

@@ -9,7 +9,7 @@ use host_api::{
 use serde::Serialize;
 use serde_json::{json, Value};
 use state::StateStore;
-use std::collections::HashMap;
+use std::collections::{HashMap, HashSet};
 use std::path::{Path, PathBuf};
 use std::sync::Arc;
 use std::time::Duration;
@@ -18,6 +18,8 @@ use terminal::TerminalManager;
 use uuid::Uuid;
 
 const APP_CHANNEL_FOR_VIEW: &str = "codex_desktop:message-for-view";
+const READ_FILE_ALLOWLIST_ENV: &str = "CODEX_ALLOWED_READ_ROOTS";
+const LOCAL_ENV_ALLOWLIST: [&str; 6] = ["SHELL", "ComSpec", "HOME", "USERPROFILE", "PATH", "TERM"];
 
 #[derive(Clone)]
 struct RuntimeState {
@@ -25,6 +27,7 @@ struct RuntimeState {
     sentry: SentryInitOptions,
     store: StateStore,
     terminal: TerminalManager,
+    allowed_read_roots: Vec<PathBuf>,
     app_server: Option<Arc<AppServerBridge>>,
 }
 
@@ -79,6 +82,50 @@ fn map_app_server_envelope(request_id: String, envelope: Value) -> HostResponse 
         request_id,
         envelope.get("result").cloned().unwrap_or_else(|| json!({})),
     )
+}
+
+fn jsonrpc_error_response(request_id: Value, code: &str, message: impl Into<String>) -> Value {
+    json!({
+        "jsonrpc": "2.0",
+        "id": request_id,
+        "error": {
+            "code": code,
+            "message": message.into()
+        }
+    })
+}
+
+fn collect_local_environment() -> HashMap<String, String> {
+    let mut env = HashMap::new();
+    for key in LOCAL_ENV_ALLOWLIST {
+        if let Some(value) = std::env::var_os(key) {
+            env.insert(key.to_string(), value.to_string_lossy().to_string());
+        }
+    }
+    env
+}
+
+fn resolve_allowed_read_roots() -> Vec<PathBuf> {
+    let mut configured_roots = std::env::var_os(READ_FILE_ALLOWLIST_ENV)
+        .map(|value| std::env::split_paths(&value).collect::<Vec<PathBuf>>())
+        .unwrap_or_default();
+
+    if configured_roots.is_empty() {
+        if let Ok(cwd) = std::env::current_dir() {
+            configured_roots.push(cwd);
+        }
+    }
+
+    let mut seen = HashSet::new();
+    configured_roots
+        .into_iter()
+        .filter_map(|root| std::fs::canonicalize(root).ok())
+        .filter(|root| seen.insert(root.clone()))
+        .collect()
+}
+
+fn is_within_allowed_roots(candidate: &Path, allowed_roots: &[PathBuf]) -> bool {
+    allowed_roots.iter().any(|root| candidate.starts_with(root))
 }
 
 async fn forward_host_request(
@@ -138,14 +185,17 @@ async fn bridge_handle_query(
         ),
         "local-environment" => {
             let cwd = std::env::current_dir().unwrap_or_else(|_| PathBuf::from("."));
+            let env = collect_local_environment();
+            let shell = env
+                .get("SHELL")
+                .cloned()
+                .or_else(|| env.get("ComSpec").cloned());
             HostResponse::ok(
                 request.request_id,
                 json!({
                   "cwd": cwd.to_string_lossy().to_string(),
-                  "env": std::env::vars().collect::<HashMap<String, String>>(),
-                  "shell": std::env::var("SHELL")
-                      .or_else(|_| std::env::var("ComSpec"))
-                      .ok(),
+                  "env": env,
+                  "shell": shell,
                 }),
             )
         }
@@ -174,12 +224,48 @@ async fn bridge_handle_query(
                 .get("path")
                 .and_then(Value::as_str)
                 .unwrap_or_default();
-            match tokio::fs::read_to_string(path).await {
+            if path.trim().is_empty() {
+                return Ok(QueryResultEnvelope {
+                    response: HostResponse::err(
+                        request.request_id,
+                        "invalid_path",
+                        "path is required",
+                    ),
+                });
+            }
+
+            let canonical_path = match tokio::fs::canonicalize(path).await {
+                Ok(path) => path,
+                Err(_) => {
+                    return Ok(QueryResultEnvelope {
+                        response: HostResponse::err(
+                            request.request_id,
+                            "io_error",
+                            "failed to read file",
+                        ),
+                    });
+                }
+            };
+
+            if !is_within_allowed_roots(&canonical_path, &state.allowed_read_roots) {
+                return Ok(QueryResultEnvelope {
+                    response: HostResponse::err(
+                        request.request_id,
+                        "path_not_allowed",
+                        "requested path is outside configured allowed roots",
+                    ),
+                });
+            }
+
+            match tokio::fs::read_to_string(&canonical_path).await {
                 Ok(contents) => HostResponse::ok(
                     request.request_id,
-                    json!({ "path": path, "contents": contents }),
+                    json!({
+                      "path": canonical_path.to_string_lossy().to_string(),
+                      "contents": contents
+                    }),
                 ),
-                Err(err) => HostResponse::err(request.request_id, "io_error", err.to_string()),
+                Err(_) => HostResponse::err(request.request_id, "io_error", "failed to read file"),
             }
         }
         _ if is_known_query_method(&request.method) => {
@@ -376,6 +462,16 @@ async fn bridge_send_message_from_view(
         .unwrap_or_else(|| json!({}));
 
     if let Some(method) = method {
+        if !is_known_query_method(&method) && !is_known_mutation_method(&method) {
+            let response = jsonrpc_error_response(
+                request_id,
+                "unknown_method",
+                format!("method '{method}' is not registered"),
+            );
+            return window
+                .emit(APP_CHANNEL_FOR_VIEW, response)
+                .map_err(|err| err.to_string());
+        }
         let response = if let Some(bridge) = &state.app_server {
             match bridge
                 .request(
@@ -387,31 +483,23 @@ async fn bridge_send_message_from_view(
                 .await
             {
                 Ok(value) => value,
-                Err(err) => json!({
-                    "jsonrpc": "2.0",
-                    "id": request_id,
-                    "error": {
-                        "code": "app_server_error",
-                        "message": err.to_string()
-                    }
-                }),
+                Err(err) => jsonrpc_error_response(request_id, "app_server_error", err.to_string()),
             }
         } else {
-            json!({
-                "jsonrpc": "2.0",
-                "id": request_id,
-                "error": {
-                    "code": "app_server_unavailable",
-                    "message": "app-server bridge is unavailable"
-                }
-            })
+            jsonrpc_error_response(
+                request_id,
+                "app_server_unavailable",
+                "app-server bridge is unavailable",
+            )
         };
         window
             .emit(APP_CHANNEL_FOR_VIEW, response)
             .map_err(|err| err.to_string())
     } else {
+        let response =
+            jsonrpc_error_response(request_id, "missing_method", "request method is required");
         window
-            .emit(APP_CHANNEL_FOR_VIEW, payload)
+            .emit(APP_CHANNEL_FOR_VIEW, response)
             .map_err(|err| err.to_string())
     }
 }
@@ -549,10 +637,13 @@ fn electron_bridge_init_script(
         WindowType::Secondary => "electron",
         WindowType::Overlay => "electron",
     };
+    let build_flavor_json =
+        serde_json::to_string(build_flavor).unwrap_or_else(|_| "\"\"".to_string());
+    let session_id_json = serde_json::to_string(session_id).unwrap_or_else(|_| "\"\"".to_string());
     include_str!("../../bridge/electronBridgeCompat.js")
         .replace("__WINDOW_TYPE__", window_type_str)
-        .replace("__BUILD_FLAVOR__", build_flavor)
-        .replace("__APP_SESSION_ID__", session_id)
+        .replace("__BUILD_FLAVOR__", &build_flavor_json)
+        .replace("__APP_SESSION_ID__", &session_id_json)
 }
 
 fn codex_cli_candidate_paths() -> Vec<PathBuf> {
@@ -637,6 +728,7 @@ async fn main() -> anyhow::Result<()> {
     let build_flavor = std::env::var("BUILD_FLAVOR").unwrap_or_else(|_| "tauri-dev".to_string());
     let session_id = Uuid::new_v4().to_string();
     let app_server = maybe_start_app_server_bridge().await;
+    let allowed_read_roots = resolve_allowed_read_roots();
 
     let data_dir = dirs::data_local_dir()
         .unwrap_or_else(|| PathBuf::from("."))
@@ -650,6 +742,7 @@ async fn main() -> anyhow::Result<()> {
         },
         store,
         terminal: TerminalManager::default(),
+        allowed_read_roots,
         app_server,
     };
 

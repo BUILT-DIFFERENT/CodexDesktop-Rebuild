@@ -16,7 +16,7 @@ impl StateStore {
     }
 
     pub async fn get_json(&self, key: &str) -> Result<Value> {
-        let path = self.path_for(key);
+        let path = self.path_for(key)?;
         if !path.exists() {
             return Ok(json!({}));
         }
@@ -26,7 +26,7 @@ impl StateStore {
     }
 
     pub async fn set_json(&self, key: &str, value: &Value) -> Result<()> {
-        let path = self.path_for(key);
+        let path = self.path_for(key)?;
         if let Some(parent) = path.parent() {
             fs::create_dir_all(parent).await?;
         }
@@ -35,7 +35,18 @@ impl StateStore {
         Ok(())
     }
 
-    fn path_for(&self, key: &str) -> PathBuf {
-        self.root.join(format!("{key}.json"))
+    fn path_for(&self, key: &str) -> Result<PathBuf> {
+        if key.is_empty() {
+            return Err(anyhow::anyhow!("state key cannot be empty"));
+        }
+        if key.contains("..")
+            || key.contains('/')
+            || key.contains('\\')
+            || key.contains(':')
+            || key.contains('\0')
+        {
+            return Err(anyhow::anyhow!("invalid state key"));
+        }
+        Ok(self.root.join(format!("{key}.json")))
     }
 }
