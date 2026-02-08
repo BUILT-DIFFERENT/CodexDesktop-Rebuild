@@ -3,6 +3,10 @@
 This repository is executing a parity-hard Electron -> Rust/Tauri rewrite.
 Agents must preserve behavior, UI, and animation parity while migrating host/runtime and renderer internals.
 
+## Global Instruction
+
+Always use Context7 MCP when I need library/API documentation, code generation, setup or configuration steps without me having to explicitly ask.
+
 ## Hard Completion Gate (Non-Negotiable)
 
 A rewrite milestone is only complete when all of the following are true:
