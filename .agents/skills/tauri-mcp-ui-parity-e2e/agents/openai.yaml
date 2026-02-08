@@ -1,0 +1,4 @@
+interface:
+  display_name: "Tauri MCP UI Parity E2E"
+  short_description: "Debug live flows and validate parity with screenshots"
+  default_prompt: "Use -mcp-ui-parity-e2e to run an end-to-end Tauri workflow and confirm UI parity with screenshot evidence."
